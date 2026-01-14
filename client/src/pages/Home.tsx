@@ -1150,8 +1150,18 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} Marketplace24-7 GmbH (NON DOM Group). Alle Rechte vorbehalten.</p>
+          <div className="pt-8 border-t">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+              <p>© {new Date().getFullYear()} Marketplace24-7 GmbH (NON DOM Group). Alle Rechte vorbehalten.</p>
+              <div className="flex gap-6">
+                <Link href="/impressum" className="hover:text-primary transition-colors">
+                  Impressum
+                </Link>
+                <Link href="/datenschutz" className="hover:text-primary transition-colors">
+                  Datenschutz
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </footer>

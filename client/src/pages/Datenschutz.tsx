@@ -80,11 +80,32 @@ export default function Datenschutz() {
 
           {/* 2. Hosting */}
           <section>
-            <h2 className="text-2xl font-bold mt-8 mb-4">2. Hosting</h2>
+            <h2 className="text-2xl font-bold mt-8 mb-4">2. Hosting und Dienste</h2>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3">Railway (Hosting)</h3>
             <p className="mb-4 text-muted-foreground">
-              Wir hosten die Inhalte unserer Website bei einem externen Anbieter. Die Verwendung 
-              erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes 
-              Interesse an einer möglichst zuverlässigen Darstellung unserer Website.
+              Wir hosten die Inhalte unserer Website bei Railway. Die Verwendung erfolgt auf
+              Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Wir haben ein berechtigtes Interesse
+              an einer möglichst zuverlässigen Darstellung unserer Website. Railway ist ein
+              Cloud-Hosting-Anbieter mit Servern weltweit.
+            </p>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3">Clerk (Authentifizierung)</h3>
+            <p className="mb-4 text-muted-foreground">
+              Für die Benutzer-Authentifizierung nutzen wir den Dienst Clerk. Clerk verarbeitet
+              Ihre Anmeldedaten (E-Mail, Passwort) zur Bereitstellung der Login-Funktionalität.
+              Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO
+              (Vertragserfüllung). Weitere Informationen finden Sie in der Datenschutzerklärung
+              von Clerk: https://clerk.com/privacy
+            </p>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3">Stripe (Zahlungsabwicklung)</h3>
+            <p className="mb-4 text-muted-foreground">
+              Für die Zahlungsabwicklung nutzen wir Stripe. Bei Zahlungsvorgängen werden Ihre
+              Zahlungsdaten (Kreditkartendaten, Rechnungsadresse) direkt an Stripe übermittelt.
+              Wir selbst speichern keine vollständigen Kreditkartendaten. Die Datenverarbeitung
+              erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
+              Weitere Informationen: https://stripe.com/privacy
             </p>
           </section>
 
