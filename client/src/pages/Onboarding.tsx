@@ -185,7 +185,10 @@ export default function Onboarding() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <steps[currentStep - 1].icon className="w-6 h-6" />
+              {(() => {
+                const StepIcon = steps[currentStep - 1].icon;
+                return <StepIcon className="w-6 h-6" />;
+              })()}
               {steps[currentStep - 1].title}
             </CardTitle>
             <CardDescription>
