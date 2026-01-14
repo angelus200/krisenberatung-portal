@@ -3,8 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "wouter";
-import { 
-  ArrowLeft, 
+import {
+  ArrowLeft,
   Search,
   BookOpen,
   ChevronRight,
@@ -19,334 +19,130 @@ interface GlossaryTerm {
 }
 
 const glossaryTerms: GlossaryTerm[] = [
-  // A
-  {
-    term: "Annuität",
-    definition: "Gleichbleibende jährliche Zahlung zur Tilgung eines Darlehens, bestehend aus Zins- und Tilgungsanteil. Die Annuität bleibt über die Laufzeit konstant, wobei sich das Verhältnis von Zins zu Tilgung verschiebt.",
-    category: "Finanzierung",
-    relatedTerms: ["Tilgung", "Zinssatz"]
-  },
-  {
-    term: "Agio",
-    definition: "Aufschlag auf den Nennwert eines Wertpapiers oder einer Anleihe. Bei Immobilienfonds bezeichnet das Agio den Ausgabeaufschlag.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Disagio", "Anleihe"]
-  },
-  {
-    term: "Anleihe",
-    definition: "Schuldverschreibung, bei der sich der Emittent zur Rückzahlung des Nennwerts und zur Zahlung von Zinsen verpflichtet. Immobilienanleihen sind durch Immobilien besichert.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Credit Linked Note", "Zertifikat"]
-  },
-  {
-    term: "Asset Management",
-    definition: "Professionelle Verwaltung von Vermögenswerten mit dem Ziel der Wertsteigerung und Ertragsoptimierung. Im Immobilienbereich umfasst dies die strategische Steuerung von Immobilienportfolios.",
-    category: "Management"
-  },
   // B
   {
-    term: "Beleihungswert",
-    definition: "Von der Bank ermittelter Wert einer Immobilie als Grundlage für die Kreditvergabe. Liegt in der Regel unter dem Verkehrswert und dient als Sicherheit.",
-    category: "Finanzierung",
-    relatedTerms: ["Beleihungsauslauf", "Verkehrswert"]
-  },
-  {
-    term: "Beleihungsauslauf (LTV)",
-    definition: "Loan-to-Value Ratio - Verhältnis zwischen Darlehenssumme und Beleihungswert der Immobilie in Prozent. Je niedriger der LTV, desto besser die Konditionen.",
-    category: "Finanzierung",
-    relatedTerms: ["Beleihungswert", "Eigenkapitalquote"]
-  },
-  {
-    term: "Break-Even",
-    definition: "Zeitpunkt, ab dem die Einnahmen die Kosten übersteigen. Bei Refinanzierungen der Punkt, ab dem die Einsparungen die Umschuldungskosten übersteigen.",
-    category: "Analyse",
-    relatedTerms: ["Refinanzierung", "ROI"]
-  },
-  // C
-  {
-    term: "Cashflow",
-    definition: "Differenz zwischen Einnahmen und Ausgaben einer Immobilie. Positiver Cashflow bedeutet, dass die Mieteinnahmen alle Kosten (inkl. Finanzierung) übersteigen.",
-    category: "Analyse",
-    relatedTerms: ["NOI", "DSCR"]
-  },
-  {
-    term: "Credit Linked Note (CLN)",
-    definition: "Strukturiertes Wertpapier, dessen Rückzahlung an die Bonität eines Referenzschuldners gekoppelt ist. Im Immobilienbereich oft zur Refinanzierung von Portfolios eingesetzt.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Anleihe", "SPV"]
-  },
-  {
-    term: "Club Deal",
-    definition: "Gemeinsame Investition mehrerer institutioneller oder semi-professioneller Investoren in ein einzelnes Immobilienprojekt oder -portfolio.",
-    category: "Investition",
-    relatedTerms: ["Joint Venture", "SPV"]
-  },
-  // D
-  {
-    term: "DSCR (Debt Service Coverage Ratio)",
-    definition: "Schuldendienstdeckungsgrad - Verhältnis zwischen Nettomieteinnahmen und Kapitaldienst (Zins + Tilgung). Ein DSCR > 1,2 gilt als solide.",
-    category: "Analyse",
-    relatedTerms: ["Cashflow", "NOI"]
-  },
-  {
-    term: "Disagio",
-    definition: "Abschlag vom Nennwert eines Darlehens, der die Auszahlung mindert aber steuerlich als Zinsaufwand geltend gemacht werden kann.",
-    category: "Finanzierung",
-    relatedTerms: ["Agio", "Effektivzins"]
-  },
-  {
-    term: "Due Diligence",
-    definition: "Sorgfältige Prüfung einer Immobilie oder eines Unternehmens vor dem Kauf. Umfasst rechtliche, technische, steuerliche und wirtschaftliche Aspekte.",
-    category: "Transaktion"
+    term: "BWA",
+    definition: "Betriebswirtschaftliche Auswertung - monatliche Übersicht über die wirtschaftliche Lage eines Unternehmens mit Einnahmen, Ausgaben und Gewinn/Verlust.",
+    category: "Finanzen",
+    relatedTerms: ["Liquidität"]
   },
   // E
   {
-    term: "Eigenkapitalquote",
-    definition: "Anteil des Eigenkapitals am Gesamtkapital einer Investition. Höhere EK-Quote bedeutet weniger Risiko, aber auch geringeren Leverage-Effekt.",
-    category: "Finanzierung",
-    relatedTerms: ["Leverage", "Fremdkapital"]
-  },
-  {
-    term: "Eigenkapitalrendite (ROE)",
-    definition: "Return on Equity - Rendite bezogen auf das eingesetzte Eigenkapital. Kann durch Fremdfinanzierung (Leverage) gesteigert werden.",
-    category: "Analyse",
-    relatedTerms: ["Leverage", "ROI"]
-  },
-  {
-    term: "EURIBOR",
-    definition: "Euro Interbank Offered Rate - Referenzzinssatz für den europäischen Geldmarkt. Basis für variable Immobilienkredite.",
-    category: "Zinsen",
-    relatedTerms: ["Leitzins", "Zinsbindung"]
-  },
-  {
-    term: "Exit-Strategie",
-    definition: "Geplanter Ausstieg aus einer Immobilieninvestition durch Verkauf, Refinanzierung oder Börsengang (IPO).",
-    category: "Investition"
-  },
-  // F
-  {
-    term: "Forward-Darlehen",
-    definition: "Darlehen, das heute zu festgelegten Konditionen abgeschlossen wird, aber erst in der Zukunft (bis zu 60 Monate) ausgezahlt wird. Dient der Zinssicherung.",
-    category: "Finanzierung",
-    relatedTerms: ["Zinsbindung", "Anschlussfinanzierung"]
-  },
-  {
-    term: "Fremdkapital",
-    definition: "Geliehenes Kapital zur Finanzierung einer Investition. Im Immobilienbereich typischerweise Bankdarlehen oder Anleihen.",
-    category: "Finanzierung",
-    relatedTerms: ["Eigenkapital", "Leverage"]
-  },
-  {
-    term: "Fonds",
-    definition: "Kollektive Kapitalanlage, bei der Anlegergelder gebündelt und professionell verwaltet werden. Immobilienfonds investieren in Immobilien oder Immobilienunternehmen.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["REIT", "SPV"]
+    term: "Eigenverwaltung",
+    definition: "Der Schuldner verwaltet die Insolvenzmasse selbst unter Aufsicht eines Sachwalters. Dies ermöglicht mehr Gestaltungsspielraum bei der Sanierung.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Schutzschirmverfahren", "Insolvenz"]
   },
   // G
   {
-    term: "Grundschuld",
-    definition: "Dingliches Recht an einem Grundstück zur Sicherung eines Darlehens. Anders als die Hypothek ist sie nicht an eine bestimmte Forderung gebunden.",
-    category: "Sicherheiten",
-    relatedTerms: ["Hypothek", "Beleihungswert"]
-  },
-  // H
-  {
-    term: "Holding",
-    definition: "Gesellschaft, deren Hauptzweck das Halten von Beteiligungen an anderen Unternehmen ist. Immobilienholdings bündeln oft mehrere Objektgesellschaften.",
-    category: "Struktur",
-    relatedTerms: ["SPV", "Konzern"]
-  },
-  {
-    term: "Hypothek",
-    definition: "Grundpfandrecht zur Sicherung einer Forderung. Im Gegensatz zur Grundschuld ist sie akzessorisch, d.h. an die Forderung gebunden.",
-    category: "Sicherheiten",
-    relatedTerms: ["Grundschuld", "Beleihungswert"]
+    term: "Gläubiger",
+    definition: "Person oder Unternehmen, dem Geld oder andere Leistungen geschuldet werden. Gläubiger haben Anspruch auf Befriedigung ihrer Forderungen.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Schuldner", "Vergleich"]
   },
   // I
   {
-    term: "IRR (Internal Rate of Return)",
-    definition: "Interner Zinsfuß - Renditekennzahl, die den Zinssatz angibt, bei dem der Kapitalwert einer Investition null ist. Berücksichtigt den Zeitwert des Geldes.",
-    category: "Analyse",
-    relatedTerms: ["ROI", "NPV"]
-  },
-  // J
-  {
-    term: "Joint Venture",
-    definition: "Gemeinschaftsunternehmen zweier oder mehrerer Partner für ein bestimmtes Projekt. Im Immobilienbereich oft zwischen Entwickler und Investor.",
-    category: "Struktur",
-    relatedTerms: ["Club Deal", "SPV"]
-  },
-  // K
-  {
-    term: "Kapitalmarkt",
-    definition: "Markt für langfristige Finanzierungen durch Emission von Wertpapieren wie Aktien, Anleihen oder Zertifikaten.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Anleihe", "Zertifikat"]
+    term: "Insolvenz",
+    definition: "Zahlungsunfähigkeit oder Überschuldung eines Unternehmens. Führt zur Eröffnung eines Insolvenzverfahrens durch das Amtsgericht.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Insolvenzantrag", "Zahlungsunfähigkeit", "Überschuldung"]
   },
   {
-    term: "KfW-Förderung",
-    definition: "Staatliche Förderprogramme der Kreditanstalt für Wiederaufbau für energieeffizientes Bauen und Sanieren mit günstigen Zinsen und Tilgungszuschüssen.",
-    category: "Förderung"
+    term: "Insolvenzantrag",
+    definition: "Antrag beim Amtsgericht zur Eröffnung eines Insolvenzverfahrens. Kann vom Schuldner selbst oder von Gläubigern gestellt werden.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Insolvenz", "Eigenverwaltung"]
   },
   // L
   {
-    term: "Leverage-Effekt",
-    definition: "Hebelwirkung durch Fremdfinanzierung. Positiver Leverage: Gesamtrendite > Fremdkapitalzins → EK-Rendite steigt. Negativer Leverage: umgekehrt.",
-    category: "Finanzierung",
-    relatedTerms: ["Eigenkapitalrendite", "Fremdkapital"]
-  },
-  {
-    term: "Leitzins",
-    definition: "Von der Zentralbank (EZB) festgelegter Zinssatz, zu dem sich Geschäftsbanken refinanzieren können. Beeinflusst indirekt alle Kreditzinsen.",
-    category: "Zinsen",
-    relatedTerms: ["EURIBOR", "Zinspolitik"]
-  },
-  {
-    term: "LTV (Loan-to-Value)",
-    definition: "Siehe Beleihungsauslauf - Verhältnis von Darlehenssumme zu Immobilienwert.",
-    category: "Finanzierung",
-    relatedTerms: ["Beleihungsauslauf", "Beleihungswert"]
+    term: "Liquidität",
+    definition: "Fähigkeit eines Unternehmens, seinen Zahlungsverpflichtungen fristgerecht nachzukommen. Mangelnde Liquidität führt zur Zahlungsunfähigkeit.",
+    category: "Finanzen",
+    relatedTerms: ["Zahlungsunfähigkeit", "BWA"]
   },
   // M
   {
-    term: "Mezzanine-Kapital",
-    definition: "Hybride Finanzierungsform zwischen Eigen- und Fremdkapital. Bietet höhere Renditen als Senior Debt, aber nachrangige Besicherung.",
-    category: "Finanzierung",
-    relatedTerms: ["Senior Debt", "Nachrangdarlehen"]
+    term: "Mahnbescheid",
+    definition: "Gerichtliches Mahnverfahren zur Durchsetzung von Geldforderungen. Wird vom Mahngericht auf Antrag des Gläubigers erlassen.",
+    category: "Vollstreckung",
+    relatedTerms: ["Vollstreckungsbescheid", "Gläubiger"]
   },
   {
-    term: "Multiplikator",
-    definition: "Verhältnis von Kaufpreis zu Jahresnettokaltmiete. Ein Multiplikator von 20 bedeutet, dass der Kaufpreis dem 20-fachen der Jahresmiete entspricht.",
-    category: "Bewertung",
-    relatedTerms: ["Rendite", "Cap Rate"]
-  },
-  // N
-  {
-    term: "Nachrangdarlehen",
-    definition: "Darlehen, das im Insolvenzfall erst nach vorrangigen Gläubigern bedient wird. Höheres Risiko wird durch höhere Zinsen kompensiert.",
-    category: "Finanzierung",
-    relatedTerms: ["Mezzanine-Kapital", "Senior Debt"]
-  },
-  {
-    term: "NOI (Net Operating Income)",
-    definition: "Nettobetriebsergebnis - Mieteinnahmen abzüglich Bewirtschaftungskosten, aber vor Kapitaldienst und Steuern.",
-    category: "Analyse",
-    relatedTerms: ["Cashflow", "DSCR"]
-  },
-  {
-    term: "NPV (Net Present Value)",
-    definition: "Kapitalwert - Summe aller auf den heutigen Zeitpunkt abgezinsten zukünftigen Zahlungsströme einer Investition.",
-    category: "Analyse",
-    relatedTerms: ["IRR", "Diskontierung"]
-  },
-  // P
-  {
-    term: "Private Placement",
-    definition: "Nicht-öffentliche Platzierung von Wertpapieren bei ausgewählten institutionellen oder qualifizierten Investoren.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Anleihe", "Club Deal"]
-  },
-  {
-    term: "Prolongation",
-    definition: "Verlängerung eines bestehenden Darlehens zu neuen Konditionen beim selben Kreditgeber nach Ablauf der Zinsbindung.",
-    category: "Finanzierung",
-    relatedTerms: ["Anschlussfinanzierung", "Umschuldung"]
+    term: "Mahnungen",
+    definition: "Außergerichtliche Zahlungsaufforderungen des Gläubigers an den Schuldner. Oft Vorstufe zum gerichtlichen Mahnverfahren.",
+    category: "Vollstreckung",
+    relatedTerms: ["Mahnbescheid", "Vollstreckungsbescheid"]
   },
   // R
   {
-    term: "Refinanzierung",
-    definition: "Ablösung eines bestehenden Darlehens durch ein neues, oft zu besseren Konditionen. Kann auch die Aufnahme von Kapitalmarktmitteln bedeuten.",
-    category: "Finanzierung",
-    relatedTerms: ["Umschuldung", "Prolongation"]
+    term: "Ratenzahlung",
+    definition: "Tilgung einer Schuld in vereinbarten Teilbeträgen über einen festgelegten Zeitraum. Erleichtert die Rückzahlung größerer Beträge.",
+    category: "Sanierung",
+    relatedTerms: ["Stundung", "Vergleich"]
   },
   {
-    term: "REIT (Real Estate Investment Trust)",
-    definition: "Börsennotierte Immobiliengesellschaft mit steuerlichen Vorteilen, die mindestens 90% der Gewinne ausschütten muss.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Fonds", "Aktie"]
+    term: "Restschuldbefreiung",
+    definition: "Befreiung von verbleibenden Schulden nach Abschluss eines Insolvenzverfahrens. Ermöglicht einen wirtschaftlichen Neustart.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Insolvenz", "Schuldner"]
   },
   {
-    term: "Rendite",
-    definition: "Ertrag einer Kapitalanlage in Prozent des eingesetzten Kapitals. Bei Immobilien unterscheidet man Brutto-, Netto- und Eigenkapitalrendite.",
-    category: "Analyse",
-    relatedTerms: ["ROI", "Eigenkapitalrendite"]
-  },
-  {
-    term: "ROI (Return on Investment)",
-    definition: "Gesamtrendite einer Investition, berechnet als Gewinn dividiert durch eingesetztes Kapital.",
-    category: "Analyse",
-    relatedTerms: ["IRR", "Eigenkapitalrendite"]
+    term: "Restrukturierung",
+    definition: "Umfassende Umstrukturierung von Schulden, Geschäftsprozessen und Unternehmensstrukturen zur Wiederherstellung der Wirtschaftlichkeit.",
+    category: "Sanierung",
+    relatedTerms: ["Sanierung", "Vergleich"]
   },
   // S
   {
-    term: "Senior Debt",
-    definition: "Vorrangiges Fremdkapital mit erstrangiger Besicherung. Wird im Insolvenzfall vor nachrangigen Gläubigern bedient.",
-    category: "Finanzierung",
-    relatedTerms: ["Mezzanine-Kapital", "Nachrangdarlehen"]
+    term: "Sanierung",
+    definition: "Gesamtheit aller Maßnahmen zur Wiederherstellung der Zahlungsfähigkeit und wirtschaftlichen Leistungsfähigkeit eines Unternehmens.",
+    category: "Sanierung",
+    relatedTerms: ["Restrukturierung", "Insolvenz"]
   },
   {
-    term: "SPV (Special Purpose Vehicle)",
-    definition: "Zweckgesellschaft - Rechtlich eigenständige Gesellschaft, die für einen bestimmten Zweck (z.B. Halten einer Immobilie) gegründet wird.",
-    category: "Struktur",
-    relatedTerms: ["Holding", "Club Deal"]
+    term: "Schuldner",
+    definition: "Person oder Unternehmen, das Geld oder andere Leistungen schuldet. Trägt die Verpflichtung zur Erfüllung gegenüber dem Gläubiger.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Gläubiger", "Insolvenz"]
   },
   {
-    term: "Sondertilgung",
-    definition: "Außerplanmäßige Tilgung eines Darlehens über die reguläre Rate hinaus. Oft auf einen bestimmten Prozentsatz pro Jahr begrenzt.",
-    category: "Finanzierung",
-    relatedTerms: ["Tilgung", "Vorfälligkeitsentschädigung"]
+    term: "Schutzschirmverfahren",
+    definition: "Vorbereitende Sanierung in Eigenverwaltung unter gerichtlichem Schutz. Verhindert Vollstreckungsmaßnahmen während der Sanierungsphase.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Eigenverwaltung", "Sanierung"]
   },
-  // T
   {
-    term: "Tilgung",
-    definition: "Rückzahlung des Darlehensbetrags. Bei Annuitätendarlehen steigt der Tilgungsanteil über die Laufzeit, während der Zinsanteil sinkt.",
-    category: "Finanzierung",
-    relatedTerms: ["Annuität", "Zinssatz"]
+    term: "Stundung",
+    definition: "Aufschub der Zahlungspflicht auf einen späteren Zeitpunkt durch Vereinbarung mit dem Gläubiger. Ermöglicht kurzfristige Liquiditätsentlastung.",
+    category: "Sanierung",
+    relatedTerms: ["Ratenzahlung", "Vergleich"]
   },
-  // U
+  // Ü
   {
-    term: "Umschuldung",
-    definition: "Wechsel zu einem anderen Kreditgeber bei der Anschlussfinanzierung. Kann bessere Konditionen bieten, verursacht aber Kosten.",
-    category: "Finanzierung",
-    relatedTerms: ["Refinanzierung", "Prolongation"]
+    term: "Überschuldung",
+    definition: "Die Schulden eines Unternehmens übersteigen das vorhandene Vermögen. Neben Zahlungsunfähigkeit ein Insolvenzgrund.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Insolvenz", "Zahlungsunfähigkeit"]
   },
   // V
   {
-    term: "Verkehrswert",
-    definition: "Marktwert einer Immobilie - der Preis, der im gewöhnlichen Geschäftsverkehr erzielt werden kann. Basis für Kaufpreisverhandlungen.",
-    category: "Bewertung",
-    relatedTerms: ["Beleihungswert", "Ertragswert"]
+    term: "Vergleich",
+    definition: "Einigung zwischen Schuldner und Gläubigern auf einen reduzierten Zahlungsbetrag oder geänderte Zahlungsmodalitäten zur Vermeidung der Insolvenz.",
+    category: "Sanierung",
+    relatedTerms: ["Gläubiger", "Schuldner", "Ratenzahlung"]
   },
   {
-    term: "Vorfälligkeitsentschädigung",
-    definition: "Entschädigung an die Bank bei vorzeitiger Darlehensrückzahlung für entgangene Zinsen. Kann bei Refinanzierungen erheblich sein.",
-    category: "Finanzierung",
-    relatedTerms: ["Refinanzierung", "Sondertilgung"]
-  },
-  // W
-  {
-    term: "WAULT (Weighted Average Unexpired Lease Term)",
-    definition: "Gewichtete durchschnittliche Restmietlaufzeit - wichtige Kennzahl für die Bewertung von Gewerbeimmobilien.",
-    category: "Analyse"
+    term: "Vollstreckungsbescheid",
+    definition: "Amtlicher Titel zur Zwangsvollstreckung nach erfolglosem Widerspruch gegen einen Mahnbescheid. Ermöglicht Vollstreckungsmaßnahmen.",
+    category: "Vollstreckung",
+    relatedTerms: ["Mahnbescheid", "Gläubiger"]
   },
   // Z
   {
-    term: "Zertifikat",
-    definition: "Strukturiertes Wertpapier, dessen Wertentwicklung an einen Basiswert gekoppelt ist. Immobilienzertifikate ermöglichen Investitionen in Immobilien ohne direkten Erwerb.",
-    category: "Kapitalmarkt",
-    relatedTerms: ["Anleihe", "Credit Linked Note"]
-  },
-  {
-    term: "Zinsbindung",
-    definition: "Zeitraum, für den der Zinssatz eines Darlehens festgeschrieben ist. Üblich sind 5, 10, 15 oder 20 Jahre.",
-    category: "Finanzierung",
-    relatedTerms: ["Zinssatz", "Anschlussfinanzierung"]
-  },
-  {
-    term: "Zinssatz",
-    definition: "Preis für geliehenes Kapital in Prozent pro Jahr. Unterschieden wird zwischen Nominal- und Effektivzins.",
-    category: "Finanzierung",
-    relatedTerms: ["EURIBOR", "Leitzins"]
+    term: "Zahlungsunfähigkeit",
+    definition: "Unfähigkeit, fällige Zahlungsverpflichtungen zu erfüllen. Führt zusammen mit Überschuldung zur Insolvenzantragspflicht.",
+    category: "Insolvenzrecht",
+    relatedTerms: ["Insolvenz", "Überschuldung", "Liquidität"]
   }
 ];
 
@@ -362,141 +158,142 @@ export default function Glossary() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [expandedTerm, setExpandedTerm] = useState<string | null>(null);
 
-  // Gefilterte Begriffe
+  // Filter Begriffe
   const filteredTerms = useMemo(() => {
-    return glossaryTerms
-      .filter(term => {
-        // Suchfilter
-        if (searchQuery) {
-          const query = searchQuery.toLowerCase();
-          return (
-            term.term.toLowerCase().includes(query) ||
-            term.definition.toLowerCase().includes(query)
-          );
-        }
-        return true;
-      })
-      .filter(term => {
-        // Buchstabenfilter
-        if (selectedLetter) {
-          return term.term.toUpperCase().startsWith(selectedLetter);
-        }
-        return true;
-      })
-      .filter(term => {
-        // Kategoriefilter
-        if (selectedCategory) {
-          return term.category === selectedCategory;
-        }
-        return true;
-      })
-      .sort((a, b) => a.term.localeCompare(b.term, 'de'));
+    return glossaryTerms.filter(term => {
+      // Suchfilter
+      const matchesSearch = !searchQuery ||
+        term.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        term.definition.toLowerCase().includes(searchQuery.toLowerCase());
+
+      // Buchstabenfilter
+      const matchesLetter = !selectedLetter ||
+        term.term[0].toUpperCase() === selectedLetter;
+
+      // Kategoriefilter
+      const matchesCategory = !selectedCategory ||
+        term.category === selectedCategory;
+
+      return matchesSearch && matchesLetter && matchesCategory;
+    }).sort((a, b) => a.term.localeCompare(b.term));
   }, [searchQuery, selectedLetter, selectedCategory]);
 
-  // Buchstaben mit Begriffen
-  const lettersWithTerms = useMemo(() => {
-    return new Set(glossaryTerms.map(t => t.term[0].toUpperCase()));
-  }, []);
-
-  // Gruppierte Begriffe nach Buchstaben
+  // Gruppiere nach Anfangsbuchstaben
   const groupedTerms = useMemo(() => {
-    const groups: { [key: string]: GlossaryTerm[] } = {};
+    const grouped: Record<string, GlossaryTerm[]> = {};
+
     filteredTerms.forEach(term => {
       const letter = term.term[0].toUpperCase();
-      if (!groups[letter]) {
-        groups[letter] = [];
+      if (!grouped[letter]) {
+        grouped[letter] = [];
       }
-      groups[letter].push(term);
+      grouped[letter].push(term);
     });
-    return groups;
+
+    return grouped;
   }, [filteredTerms]);
 
-  const clearFilters = () => {
-    setSearchQuery("");
-    setSelectedLetter(null);
-    setSelectedCategory(null);
-  };
+  // Buchstaben die verfügbar sind
+  const availableLetters = useMemo(() => {
+    return alphabet.filter(letter =>
+      glossaryTerms.some(term => term.term[0].toUpperCase() === letter)
+    );
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/dashboard">
-              <Button variant="ghost" className="gap-2 text-gray-600 hover:text-primary">
-                <ArrowLeft className="h-4 w-4" />
-                <span className="hidden sm:inline">Zurück zum Dashboard</span>
-                <span className="sm:hidden">Zurück</span>
+      <div className="border-b">
+        <div className="container py-8">
+          <div className="flex items-center gap-4 mb-4">
+            <Link href="/">
+              <Button variant="ghost" size="sm">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Zurück
               </Button>
             </Link>
-            <div className="flex items-center gap-2 text-primary">
-              <BookOpen className="h-6 w-6" />
-              <h1 className="text-xl font-bold">Glossar</h1>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <BookOpen className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold">Glossar Krisenberatung</h1>
+              <p className="text-muted-foreground">
+                Wichtige Begriffe aus Insolvenzrecht, Sanierung und Vollstreckung verständlich erklärt
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Suchbereich */}
+      {/* Content */}
+      <div className="container py-8">
+        {/* Suchleiste */}
         <Card className="mb-6">
-          <CardContent className="p-6">
-            <div className="flex flex-col md:flex-row gap-4">
-              {/* Suchfeld */}
-              <div className="relative flex-1">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                <Input
-                  placeholder="Begriff suchen..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10"
-                />
-              </div>
-              
-              {/* Kategorie-Filter */}
-              <select
-                value={selectedCategory || ""}
-                onChange={(e) => setSelectedCategory(e.target.value || null)}
-                className="px-4 py-2 border rounded-md bg-white text-sm"
-              >
-                <option value="">Alle Kategorien</option>
-                {categories.map(cat => (
-                  <option key={cat} value={cat}>{cat}</option>
-                ))}
-              </select>
-
-              {/* Filter zurücksetzen */}
-              {(searchQuery || selectedLetter || selectedCategory) && (
-                <Button variant="outline" onClick={clearFilters}>
-                  Filter zurücksetzen
-                </Button>
-              )}
+          <CardContent className="pt-6">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Begriff suchen..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 h-12 text-lg"
+              />
             </div>
+          </CardContent>
+        </Card>
 
-            {/* A-Z Navigation */}
-            <div className="mt-4 flex flex-wrap gap-1">
-              {alphabet.map(letter => {
-                const hasTerms = lettersWithTerms.has(letter);
-                const isSelected = selectedLetter === letter;
-                return (
-                  <button
+        {/* Filter */}
+        <Card className="mb-6">
+          <CardContent className="pt-6">
+            {/* Buchstaben-Filter */}
+            <div className="mb-6">
+              <label className="text-sm font-medium mb-2 block">Nach Buchstabe filtern</label>
+              <div className="flex flex-wrap gap-2">
+                <Button
+                  variant={selectedLetter === null ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedLetter(null)}
+                >
+                  Alle
+                </Button>
+                {availableLetters.map(letter => (
+                  <Button
                     key={letter}
-                    onClick={() => setSelectedLetter(isSelected ? null : letter)}
-                    disabled={!hasTerms}
-                    className={`
-                      w-8 h-8 rounded text-sm font-medium transition-colors
-                      ${isSelected 
-                        ? 'bg-primary text-white' 
-                        : hasTerms 
-                          ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' 
-                          : 'bg-slate-50 text-slate-300 cursor-not-allowed'}
-                    `}
+                    variant={selectedLetter === letter ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedLetter(letter)}
                   >
                     {letter}
-                  </button>
-                );
-              })}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            {/* Kategorie-Filter */}
+            <div>
+              <label className="text-sm font-medium mb-2 block">Nach Kategorie filtern</label>
+              <div className="flex flex-wrap gap-2">
+                <Button
+                  variant={selectedCategory === null ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(null)}
+                >
+                  Alle Kategorien
+                </Button>
+                {categories.map(category => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -534,7 +331,7 @@ export default function Glossary() {
                 {/* Begriffe */}
                 <div className="space-y-3">
                   {terms.map(term => (
-                    <Card 
+                    <Card
                       key={term.term}
                       className={`transition-all cursor-pointer hover:shadow-md ${
                         expandedTerm === term.term ? 'ring-2 ring-primary' : ''
@@ -555,7 +352,7 @@ export default function Glossary() {
                             }`}>
                               {term.definition}
                             </p>
-                            
+
                             {/* Verwandte Begriffe */}
                             {expandedTerm === term.term && term.relatedTerms && term.relatedTerms.length > 0 && (
                               <div className="mt-3 pt-3 border-t">
@@ -593,13 +390,13 @@ export default function Glossary() {
         {/* CTA */}
         <Card className="mt-8 bg-gradient-to-r from-primary to-primary/80 text-white">
           <CardContent className="p-6">
-            <h3 className="text-xl font-bold mb-2">Fragen zu Finanzbegriffen?</h3>
+            <h3 className="text-xl font-bold mb-2">Fragen zur Krisenberatung?</h3>
             <p className="text-white/90 mb-4">
-              Unsere Experten erklären Ihnen gerne alle Details zu Kapitalmarktstrukturen und Finanzierungsoptionen.
+              Unsere Experten helfen Ihnen gerne bei allen Fragen zu Insolvenz, Sanierung und Restrukturierung.
             </p>
             <Link href="/#kontakt">
               <Button variant="secondary" className="w-full sm:w-auto">
-                Kostenlose Beratung anfordern
+                Kostenlose Erstberatung anfordern
                 <ChevronRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>

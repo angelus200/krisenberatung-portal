@@ -30,10 +30,10 @@ interface CalculatorInfo {
 const calculators: CalculatorInfo[] = [
   {
     path: "/tools/interest-calculator",
-    name: "Zins- & Tilgungsrechner",
-    shortName: "Zins & Tilgung",
+    name: "Schulden-Tilgungsrechner",
+    shortName: "Tilgungsplan",
     icon: Percent,
-    description: "Annuitäten und Tilgungsplan berechnen"
+    description: "Berechnen Sie Ihren Tilgungsplan für bestehende Verbindlichkeiten"
   },
   {
     path: "/tools/refinance-calculator",
