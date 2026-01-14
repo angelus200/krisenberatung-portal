@@ -607,12 +607,11 @@ const pipelineRouter = router({
     .input(z.object({ tenantId: z.number() }))
     .mutation(async ({ input, ctx }) => {
       const defaultStages = [
-        { name: "Neu", order: 1, color: "#6B7280" },
-        { name: "Qualifiziert", order: 2, color: "#3B82F6" },
-        { name: "Angebot", order: 3, color: "#F59E0B" },
-        { name: "Verhandlung", order: 4, color: "#8B5CF6" },
-        { name: "Gewonnen", order: 5, color: "#10B981" },
-        { name: "Verloren", order: 6, color: "#EF4444" },
+        { name: "Erstanfrage", order: 1, color: "#3B82F6" },
+        { name: "Analyse läuft", order: 2, color: "#F59E0B" },
+        { name: "Angebot erstellt", order: 3, color: "#8B5CF6" },
+        { name: "In Beratung", order: 4, color: "#10B981" },
+        { name: "Abgeschlossen", order: 5, color: "#6B7280" },
       ];
       
       for (const stage of defaultStages) {
@@ -673,7 +672,7 @@ const dealRouter = router({
       name: z.string().min(1),
       value: z.number().optional(),
       currency: z.string().optional(),
-      stage: z.enum(['new', 'qualified', 'proposal', 'negotiation', 'won', 'lost']).optional(),
+      stage: z.enum(['erstanfrage', 'analyse', 'angebot', 'beratung', 'abgeschlossen']).optional(),
       probability: z.number().min(0).max(100).optional(),
       expectedCloseDate: z.date().optional(),
       assignedTo: z.number().optional(),
@@ -682,7 +681,7 @@ const dealRouter = router({
     .mutation(async ({ input, ctx }) => {
       const id = await db.createDeal({
         ...input,
-        stage: input.stage || 'new',
+        stage: input.stage || 'erstanfrage',
         assignedTo: input.assignedTo || ctx.user.id,
       });
       await db.createAuditLog({
@@ -703,7 +702,7 @@ const dealRouter = router({
       name: z.string().optional(),
       value: z.number().optional(),
       stageId: z.number().optional(),
-      stage: z.enum(['new', 'qualified', 'proposal', 'negotiation', 'won', 'lost']).optional(),
+      stage: z.enum(['erstanfrage', 'analyse', 'angebot', 'beratung', 'abgeschlossen']).optional(),
       probability: z.number().min(0).max(100).optional(),
       expectedCloseDate: z.date().optional(),
       assignedTo: z.number().optional(),
@@ -747,7 +746,7 @@ const dealRouter = router({
       id: z.number(),
       tenantId: z.number(),
       stageId: z.number(),
-      stage: z.enum(['new', 'qualified', 'proposal', 'negotiation', 'won', 'lost']).optional(),
+      stage: z.enum(['erstanfrage', 'analyse', 'angebot', 'beratung', 'abgeschlossen']).optional(),
     }))
     .mutation(async ({ input, ctx }) => {
       const oldDeal = await db.getDealById(input.id, input.tenantId);

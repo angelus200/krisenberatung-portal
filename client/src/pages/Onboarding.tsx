@@ -5,43 +5,48 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
 import { useState } from "react";
 import { useLocation } from "wouter";
-import { ArrowLeft, ArrowRight, Check, User, Building2, FileText, Target, Upload } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, User, Building2, AlertTriangle, Phone } from "lucide-react";
 import OnboardingDocumentUpload from "@/components/OnboardingDocumentUpload";
 import { trpc } from "@/lib/trpc";
 
 const steps = [
-  { id: 1, title: "Persönliche Daten", icon: User },
-  { id: 2, title: "Unternehmen", icon: Building2 },
-  { id: 3, title: "Projektdetails", icon: Target },
-  { id: 4, title: "Dokumente", icon: FileText },
+  { id: 1, title: "Unternehmensdaten", icon: Building2 },
+  { id: 2, title: "Art der Krise", icon: AlertTriangle },
+  { id: 3, title: "Finanzielle Situation", icon: User },
+  { id: 4, title: "Kontakt", icon: Phone },
 ];
 
 export default function Onboarding() {
   const { user, loading } = useAuth();
   const [, setLocation] = useLocation();
   const [currentStep, setCurrentStep] = useState(1);
-  
+
   const [formData, setFormData] = useState({
-    // Personal
-    firstName: "",
-    lastName: "",
-    phone: "",
+    // Step 1: Unternehmensdaten
+    firmenname: "",
+    rechtsform: "",
+    branche: "",
+    mitarbeiterzahl: "",
+
+    // Step 2: Art der Krise
+    krisenarten: [] as string[],
+
+    // Step 3: Finanzielle Situation
+    steuerschuldenHoehe: "",
+    offeneFristen: "",
+    liquiditaetslage: "",
+
+    // Step 4: Kontakt
+    ansprechpartner: "",
     position: "",
-    // Company
-    companyName: "",
-    companyType: "",
-    industry: "",
-    employees: "",
-    website: "",
-    // Project
-    beratungsbedarf: "",
-    zeithorizont: "",
-    verwendungszweck: "",
-    projektbeschreibung: "",
+    telefon: "",
+    erreichbarkeit: "",
+
     // Documents
     documents: [] as string[],
   });
@@ -99,326 +104,363 @@ export default function Onboarding() {
     }
   };
 
-  const handleBack = () => {
+  const handlePrev = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
+      window.scrollTo(0, 0);
     }
   };
 
-  const updateFormData = (field: string, value: string) => {
-    setFormData({ ...formData, [field]: value });
+  const updateFormData = (key: string, value: any) => {
+    setFormData(prev => ({ ...prev, [key]: value }));
+  };
+
+  const toggleKrisenart = (art: string) => {
+    setFormData(prev => ({
+      ...prev,
+      krisenarten: prev.krisenarten.includes(art)
+        ? prev.krisenarten.filter(k => k !== art)
+        : [...prev.krisenarten, art]
+    }));
+  };
+
+  const isStepComplete = () => {
+    if (currentStep === 1) {
+      return formData.firmenname && formData.rechtsform && formData.branche;
+    }
+    if (currentStep === 2) {
+      return formData.krisenarten.length > 0;
+    }
+    if (currentStep === 3) {
+      return formData.steuerschuldenHoehe && formData.offeneFristen && formData.liquiditaetslage;
+    }
+    if (currentStep === 4) {
+      return formData.ansprechpartner && formData.telefon && formData.erreichbarkeit;
+    }
+    return true;
   };
 
   return (
-    <div className="min-h-screen bg-muted/30 py-8">
-      <div className="container max-w-3xl">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 py-12 px-4">
+      <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="font-bold text-2xl text-primary">NON</span>
-            <span className="font-bold text-2xl text-primary bg-primary/10 px-2 rounded">DOM</span>
-          </div>
-          <h1 className="text-2xl font-bold">Willkommen beim Krisenberatung Portal</h1>
-          <p className="text-muted-foreground mt-2">
-            Vervollständigen Sie Ihr Profil, um loszulegen
+          <h1 className="text-3xl font-bold mb-2">Willkommen bei Krisenberatung Portal</h1>
+          <p className="text-muted-foreground">
+            Begleiten Sie uns durch einige wichtige Fragen zu Ihrer Situation
           </p>
         </div>
 
         {/* Progress */}
         <div className="mb-8">
-          <Progress value={progress} className="h-2" />
-          <div className="flex justify-between mt-4">
-            {steps.map((step) => {
-              const StepIcon = step.icon;
-              const isCompleted = step.id < currentStep;
-              const isCurrent = step.id === currentStep;
-              
-              return (
-                <div 
-                  key={step.id}
-                  className={`flex flex-col items-center gap-2 ${
-                    isCompleted || isCurrent ? 'text-primary' : 'text-muted-foreground'
-                  }`}
-                >
-                  <div className={`
-                    h-10 w-10 rounded-full flex items-center justify-center
-                    ${isCompleted ? 'bg-primary text-primary-foreground' : 
-                      isCurrent ? 'bg-primary/20 border-2 border-primary' : 
-                      'bg-muted'}
-                  `}>
-                    {isCompleted ? (
-                      <Check className="h-5 w-5" />
+          <div className="flex items-center justify-between mb-4">
+            {steps.map((step, index) => (
+              <div key={step.id} className="flex items-center flex-1">
+                <div className={`flex items-center gap-2 ${index === currentStep - 1 ? 'text-primary' : index < currentStep - 1 ? 'text-green-600' : 'text-muted-foreground'}`}>
+                  <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
+                    index === currentStep - 1
+                      ? 'border-primary bg-primary text-primary-foreground'
+                      : index < currentStep - 1
+                        ? 'border-green-600 bg-green-600 text-white'
+                        : 'border-muted-foreground'
+                  }`}>
+                    {index < currentStep - 1 ? (
+                      <Check className="w-5 h-5" />
                     ) : (
-                      <StepIcon className="h-5 w-5" />
+                      <step.icon className="w-5 h-5" />
                     )}
                   </div>
-                  <span className="text-xs font-medium hidden sm:block">{step.title}</span>
+                  <span className="hidden sm:inline text-sm font-medium">{step.title}</span>
                 </div>
-              );
-            })}
+                {index < steps.length - 1 && (
+                  <div className={`h-0.5 flex-1 mx-2 ${index < currentStep - 1 ? 'bg-green-600' : 'bg-muted'}`} />
+                )}
+              </div>
+            ))}
           </div>
+          <Progress value={progress} className="h-2" />
         </div>
 
         {/* Form Card */}
         <Card>
           <CardHeader>
-            <CardTitle>{steps[currentStep - 1].title}</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <steps[currentStep - 1].icon className="w-6 h-6" />
+              {steps[currentStep - 1].title}
+            </CardTitle>
             <CardDescription>
               Schritt {currentStep} von {steps.length}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            {/* Step 1: Personal Data */}
+            {/* Step 1: Unternehmensdaten */}
             {currentStep === 1 && (
               <>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">Vorname *</Label>
-                    <Input
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={(e) => updateFormData("firstName", e.target.value)}
-                      placeholder="Max"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Nachname *</Label>
-                    <Input
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={(e) => updateFormData("lastName", e.target.value)}
-                      placeholder="Mustermann"
-                    />
-                  </div>
-                </div>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Telefon</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => updateFormData("phone", e.target.value)}
-                      placeholder="+49 123 456789"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="position">Position</Label>
-                    <Input
-                      id="position"
-                      value={formData.position}
-                      onChange={(e) => updateFormData("position", e.target.value)}
-                      placeholder="Geschäftsführer"
-                    />
-                  </div>
-                </div>
-              </>
-            )}
-
-            {/* Step 2: Company */}
-            {currentStep === 2 && (
-              <>
                 <div className="space-y-2">
-                  <Label htmlFor="companyName">Unternehmensname *</Label>
+                  <Label htmlFor="firmenname">Firmenname *</Label>
                   <Input
-                    id="companyName"
-                    value={formData.companyName}
-                    onChange={(e) => updateFormData("companyName", e.target.value)}
-                    placeholder="Musterfirma GmbH"
+                    id="firmenname"
+                    value={formData.firmenname}
+                    onChange={(e) => updateFormData("firmenname", e.target.value)}
+                    placeholder="z.B. Musterfirma GmbH"
                   />
                 </div>
+
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="companyType">Rechtsform</Label>
-                    <Select 
-                      value={formData.companyType} 
-                      onValueChange={(v) => updateFormData("companyType", v)}
+                    <Label htmlFor="rechtsform">Rechtsform *</Label>
+                    <Select
+                      value={formData.rechtsform}
+                      onValueChange={(v) => updateFormData("rechtsform", v)}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Auswählen..." />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="gmbh">GmbH</SelectItem>
+                        <SelectItem value="ug">UG (haftungsbeschränkt)</SelectItem>
                         <SelectItem value="ag">AG</SelectItem>
-                        <SelectItem value="kg">KG</SelectItem>
-                        <SelectItem value="ohg">OHG</SelectItem>
                         <SelectItem value="einzelunternehmen">Einzelunternehmen</SelectItem>
-                        <SelectItem value="other">Sonstige</SelectItem>
+                        <SelectItem value="gbr">GbR</SelectItem>
+                        <SelectItem value="ohg">OHG</SelectItem>
+                        <SelectItem value="kg">KG</SelectItem>
+                        <SelectItem value="sonstige">Sonstige</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
+
                   <div className="space-y-2">
-                    <Label htmlFor="industry">Branche</Label>
-                    <Select 
-                      value={formData.industry} 
-                      onValueChange={(v) => updateFormData("industry", v)}
+                    <Label htmlFor="branche">Branche *</Label>
+                    <Select
+                      value={formData.branche}
+                      onValueChange={(v) => updateFormData("branche", v)}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Auswählen..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="gastgewerbe">Gastgewerbe</SelectItem>
                         <SelectItem value="handel">Handel</SelectItem>
                         <SelectItem value="dienstleistung">Dienstleistung</SelectItem>
+                        <SelectItem value="gastgewerbe">Gastgewerbe</SelectItem>
+                        <SelectItem value="handwerk">Handwerk</SelectItem>
                         <SelectItem value="produktion">Produktion</SelectItem>
-                        <SelectItem value="tech">Technologie</SelectItem>
-                        <SelectItem value="other">Sonstige</SelectItem>
+                        <SelectItem value="it">IT</SelectItem>
+                        <SelectItem value="sonstige">Sonstige</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                 </div>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="employees">Mitarbeiter</Label>
-                    <Select 
-                      value={formData.employees} 
-                      onValueChange={(v) => updateFormData("employees", v)}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Auswählen..." />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="1-10">1-10</SelectItem>
-                        <SelectItem value="11-50">11-50</SelectItem>
-                        <SelectItem value="51-200">51-200</SelectItem>
-                        <SelectItem value="201-500">201-500</SelectItem>
-                        <SelectItem value="500+">500+</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="website">Website</Label>
-                    <Input
-                      id="website"
-                      type="url"
-                      value={formData.website}
-                      onChange={(e) => updateFormData("website", e.target.value)}
-                      placeholder="https://www.example.com"
-                    />
-                  </div>
-                </div>
-              </>
-            )}
 
-            {/* Step 3: Project Details */}
-            {currentStep === 3 && (
-              <>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="beratungsbedarf">Beratungsbedarf *</Label>
-                    <Select 
-                      value={formData.beratungsbedarf} 
-                      onValueChange={(v) => updateFormData("beratungsbedarf", v)}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Auswählen..." />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="500k-1m">500.000 € - 1 Mio. €</SelectItem>
-                        <SelectItem value="1m-5m">1 Mio. € - 5 Mio. €</SelectItem>
-                        <SelectItem value="5m-10m">5 Mio. € - 10 Mio. €</SelectItem>
-                        <SelectItem value="10m-50m">10 Mio. € - 50 Mio. €</SelectItem>
-                        <SelectItem value="50m+">Über 50 Mio. €</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="zeithorizont">Zeithorizont *</Label>
-                    <Select 
-                      value={formData.zeithorizont} 
-                      onValueChange={(v) => updateFormData("zeithorizont", v)}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Auswählen..." />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="sofort">Sofort</SelectItem>
-                        <SelectItem value="1-3m">1-3 Monate</SelectItem>
-                        <SelectItem value="3-6m">3-6 Monate</SelectItem>
-                        <SelectItem value="6-12m">6-12 Monate</SelectItem>
-                        <SelectItem value="12m+">Über 12 Monate</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
                 <div className="space-y-2">
-                  <Label htmlFor="verwendungszweck">Verwendungszweck</Label>
-                  <Select 
-                    value={formData.verwendungszweck} 
-                    onValueChange={(v) => updateFormData("verwendungszweck", v)}
+                  <Label htmlFor="mitarbeiterzahl">Anzahl Mitarbeiter</Label>
+                  <Select
+                    value={formData.mitarbeiterzahl}
+                    onValueChange={(v) => updateFormData("mitarbeiterzahl", v)}
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Auswählen..." />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="refinanzierung">Refinanzierung</SelectItem>
-                      <SelectItem value="akquisition">Akquisition</SelectItem>
-                      <SelectItem value="entwicklung">Projektentwicklung</SelectItem>
-                      <SelectItem value="bestand">Bestandsfinanzierung</SelectItem>
-                      <SelectItem value="other">Sonstiges</SelectItem>
+                      <SelectItem value="1-5">1-5</SelectItem>
+                      <SelectItem value="6-20">6-20</SelectItem>
+                      <SelectItem value="21-50">21-50</SelectItem>
+                      <SelectItem value="51-100">51-100</SelectItem>
+                      <SelectItem value="über-100">über 100</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="projektbeschreibung">Projektbeschreibung</Label>
-                  <Textarea
-                    id="projektbeschreibung"
-                    rows={4}
-                    value={formData.projektbeschreibung}
-                    onChange={(e) => updateFormData("projektbeschreibung", e.target.value)}
-                    placeholder="Beschreiben Sie Ihr Projekt kurz..."
-                  />
                 </div>
               </>
             )}
 
-            {/* Step 4: Documents (Optional) */}
-            {currentStep === 4 && (
-              <div className="space-y-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <p className="text-sm text-blue-800">
-                    <strong>Optional:</strong> Sie können Dokumente jetzt hochladen oder später im Dashboard nachholen. 
-                    Klicken Sie auf "Abschließen", um fortzufahren.
-                  </p>
+            {/* Step 2: Art der Krise */}
+            {currentStep === 2 && (
+              <>
+                <div className="space-y-4">
+                  <Label>Krisenart (Mehrfachauswahl möglich) *</Label>
+                  <div className="space-y-3">
+                    {[
+                      { id: "finanzamt", label: "Finanzamt-Probleme (Steuerschulden, Schätzungen)" },
+                      { id: "liquiditaet", label: "Liquiditätskrise" },
+                      { id: "insolvenz", label: "Insolvenzgefahr" },
+                      { id: "glaeubiger", label: "Gläubigerdruck" },
+                      { id: "sozialversicherung", label: "Sozialversicherungsrückstände" },
+                    ].map((art) => (
+                      <div key={art.id} className="flex items-start space-x-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors">
+                        <Checkbox
+                          id={art.id}
+                          checked={formData.krisenarten.includes(art.id)}
+                          onCheckedChange={() => toggleKrisenart(art.id)}
+                        />
+                        <Label
+                          htmlFor={art.id}
+                          className="flex-1 cursor-pointer font-normal leading-relaxed"
+                        >
+                          {art.label}
+                        </Label>
+                      </div>
+                    ))}
+                  </div>
+                  {formData.krisenarten.length === 0 && (
+                    <p className="text-sm text-muted-foreground">
+                      Bitte wählen Sie mindestens eine Krisenart aus.
+                    </p>
+                  )}
                 </div>
-                <OnboardingDocumentUpload />
-              </div>
+              </>
             )}
 
-            {/* Navigation */}
-            <div className="flex justify-between pt-4">
+            {/* Step 3: Finanzielle Situation */}
+            {currentStep === 3 && (
+              <>
+                <div className="space-y-2">
+                  <Label htmlFor="steuerschuldenHoehe">Geschätzte Höhe der Steuerschulden *</Label>
+                  <Select
+                    value={formData.steuerschuldenHoehe}
+                    onValueChange={(v) => updateFormData("steuerschuldenHoehe", v)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Auswählen..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="unter-10k">unter 10.000€</SelectItem>
+                      <SelectItem value="10k-50k">10.000€ - 50.000€</SelectItem>
+                      <SelectItem value="50k-100k">50.000€ - 100.000€</SelectItem>
+                      <SelectItem value="100k-500k">100.000€ - 500.000€</SelectItem>
+                      <SelectItem value="über-500k">über 500.000€</SelectItem>
+                      <SelectItem value="unbekannt">Unbekannt</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="offeneFristen">Offene Fristen beim Finanzamt *</Label>
+                  <Select
+                    value={formData.offeneFristen}
+                    onValueChange={(v) => updateFormData("offeneFristen", v)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Auswählen..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="keine">Keine bekannt</SelectItem>
+                      <SelectItem value="7-tage">Innerhalb 7 Tage</SelectItem>
+                      <SelectItem value="30-tage">Innerhalb 30 Tage</SelectItem>
+                      <SelectItem value="90-tage">Innerhalb 90 Tage</SelectItem>
+                      <SelectItem value="überschritten">Bereits überschritten</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="liquiditaetslage">Aktuelle Liquiditätslage *</Label>
+                  <Select
+                    value={formData.liquiditaetslage}
+                    onValueChange={(v) => updateFormData("liquiditaetslage", v)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Auswählen..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="stabil">Stabil</SelectItem>
+                      <SelectItem value="angespannt">Angespannt</SelectItem>
+                      <SelectItem value="kritisch">Kritisch</SelectItem>
+                      <SelectItem value="zahlungsunfaehig">Zahlungsunfähig drohend</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </>
+            )}
+
+            {/* Step 4: Kontakt */}
+            {currentStep === 4 && (
+              <>
+                <div className="space-y-2">
+                  <Label htmlFor="ansprechpartner">Ansprechpartner Name *</Label>
+                  <Input
+                    id="ansprechpartner"
+                    value={formData.ansprechpartner}
+                    onChange={(e) => updateFormData("ansprechpartner", e.target.value)}
+                    placeholder="z.B. Max Mustermann"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="position">Position im Unternehmen</Label>
+                  <Input
+                    id="position"
+                    value={formData.position}
+                    onChange={(e) => updateFormData("position", e.target.value)}
+                    placeholder="z.B. Geschäftsführer"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="telefon">Telefon *</Label>
+                  <Input
+                    id="telefon"
+                    type="tel"
+                    value={formData.telefon}
+                    onChange={(e) => updateFormData("telefon", e.target.value)}
+                    placeholder="+49 123 456789"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="erreichbarkeit">Beste Erreichbarkeit *</Label>
+                  <Select
+                    value={formData.erreichbarkeit}
+                    onValueChange={(v) => updateFormData("erreichbarkeit", v)}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Auswählen..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="vormittags">Vormittags (8-12 Uhr)</SelectItem>
+                      <SelectItem value="nachmittags">Nachmittags (12-17 Uhr)</SelectItem>
+                      <SelectItem value="abends">Abends (17-20 Uhr)</SelectItem>
+                      <SelectItem value="flexibel">Flexibel</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="p-4 bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800 rounded-lg">
+                  <p className="text-sm text-amber-800 dark:text-amber-200">
+                    <strong>Vertraulichkeit:</strong> Alle Ihre Angaben werden streng vertraulich behandelt und nur für die Krisenberatung verwendet.
+                  </p>
+                </div>
+              </>
+            )}
+
+            {/* Navigation Buttons */}
+            <div className="flex justify-between pt-6 border-t">
               <Button
                 variant="outline"
-                onClick={handleBack}
+                onClick={handlePrev}
                 disabled={currentStep === 1}
               >
-                <ArrowLeft className="mr-2 h-4 w-4" />
+                <ArrowLeft className="w-4 h-4 mr-2" />
                 Zurück
               </Button>
-              <div className="flex gap-2">
-                {currentStep === 4 && (
-                  <Button 
-                    variant="ghost" 
-                    onClick={() => completeOnboarding.mutate(formData)}
-                    disabled={completeOnboarding.isPending}
-                  >
-                    Überspringen & Abschließen
-                  </Button>
-                )}
-                <Button onClick={handleNext} disabled={completeOnboarding.isPending}>
-                  {currentStep === steps.length ? (
-                    <>
-                      {completeOnboarding.isPending ? "Speichern..." : "Abschließen"}
-                      <Check className="ml-2 h-4 w-4" />
-                    </>
+              <Button
+                onClick={handleNext}
+                disabled={!isStepComplete() || completeOnboarding.isPending}
+              >
+                {currentStep === steps.length ? (
+                  completeOnboarding.isPending ? (
+                    "Wird gespeichert..."
                   ) : (
                     <>
-                      Weiter
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      Abschließen
+                      <Check className="w-4 h-4 ml-2" />
                     </>
-                  )}
-                </Button>
-              </div>
+                  )
+                ) : (
+                  <>
+                    Weiter
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </>
+                )}
+              </Button>
             </div>
           </CardContent>
         </Card>

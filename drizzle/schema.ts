@@ -174,7 +174,7 @@ export type InsertPipelineStage = typeof pipelineStages.$inferInsert;
 // DEALS
 // ============================================
 
-export const dealStageEnum = mysqlEnum("dealStage", ["new", "qualified", "proposal", "negotiation", "won", "lost"]);
+export const dealStageEnum = mysqlEnum("dealStage", ["erstanfrage", "analyse", "angebot", "beratung", "abgeschlossen"]);
 
 export const deals = mysqlTable("deals", {
   id: int("id").autoincrement().primaryKey(),
@@ -184,7 +184,7 @@ export const deals = mysqlTable("deals", {
   contactId: int("contactId").notNull(),
   leadId: int("leadId"), // Optional: ursprünglicher Lead
   stageId: int("stageId").notNull(), // Pipeline Stage ID
-  stage: dealStageEnum.default("new").notNull(), // Stage enum für einfache Queries
+  stage: dealStageEnum.default("erstanfrage").notNull(), // Stage enum für einfache Queries
   assignedTo: int("assignedTo"), // User ID des zugewiesenen Mitarbeiters (alias für ownerId)
   // Deal details
   name: varchar("name", { length: 255 }).notNull(),

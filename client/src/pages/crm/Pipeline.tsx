@@ -33,12 +33,11 @@ import { toast } from 'sonner';
 import DashboardLayout from './DashboardLayout';
 
 const stageConfig = [
-  { key: 'new', label: 'Neu', color: '#6B7280' },
-  { key: 'qualified', label: 'Qualifiziert', color: '#3B82F6' },
-  { key: 'proposal', label: 'Angebot', color: '#F59E0B' },
-  { key: 'negotiation', label: 'Verhandlung', color: '#8B5CF6' },
-  { key: 'won', label: 'Gewonnen', color: '#10B981' },
-  { key: 'lost', label: 'Verloren', color: '#EF4444' },
+  { key: 'erstanfrage', label: 'Erstanfrage', color: '#3B82F6' },
+  { key: 'analyse', label: 'Analyse läuft', color: '#F59E0B' },
+  { key: 'angebot', label: 'Angebot erstellt', color: '#8B5CF6' },
+  { key: 'beratung', label: 'In Beratung', color: '#10B981' },
+  { key: 'abgeschlossen', label: 'Abgeschlossen', color: '#6B7280' },
 ];
 
 function PipelineContent() {
@@ -54,7 +53,7 @@ function PipelineContent() {
   const [probability, setProbability] = useState('50');
   const [expectedCloseDate, setExpectedCloseDate] = useState('');
   const [notes, setNotes] = useState('');
-  const [stage, setStage] = useState('new');
+  const [stage, setStage] = useState('erstanfrage');
 
   const utils = trpc.useUtils();
   const { data: deals = [], isLoading: dealsLoading } = trpc.deal.list.useQuery({ tenantId: 1 });
@@ -112,7 +111,7 @@ function PipelineContent() {
     setProbability('50');
     setExpectedCloseDate('');
     setNotes('');
-    setStage('new');
+    setStage('erstanfrage');
     setSelectedDeal(null);
   };
 
@@ -144,7 +143,7 @@ function PipelineContent() {
     setProbability(deal.probability?.toString() || '50');
     setExpectedCloseDate(deal.expectedCloseDate ? new Date(deal.expectedCloseDate).toISOString().split('T')[0] : '');
     setNotes(deal.notes || '');
-    setStage(deal.stage || 'new');
+    setStage(deal.stage || 'erstanfrage');
     setIsEditDialogOpen(true);
   };
 

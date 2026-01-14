@@ -73,12 +73,11 @@ function DealsContent() {
 
   // Default stages if none exist
   const displayStages = stages && stages.length > 0 ? stages : [
-    { id: 1, name: "Neu", color: "#6B7280", order: 1 },
-    { id: 2, name: "Qualifiziert", color: "#3B82F6", order: 2 },
-    { id: 3, name: "Angebot", color: "#F59E0B", order: 3 },
-    { id: 4, name: "Verhandlung", color: "#8B5CF6", order: 4 },
-    { id: 5, name: "Gewonnen", color: "#10B981", order: 5 },
-    { id: 6, name: "Verloren", color: "#EF4444", order: 6 },
+    { id: 1, name: "Erstanfrage", color: "#3B82F6", order: 1 },
+    { id: 2, name: "Analyse läuft", color: "#F59E0B", order: 2 },
+    { id: 3, name: "Angebot erstellt", color: "#8B5CF6", order: 3 },
+    { id: 4, name: "In Beratung", color: "#10B981", order: 4 },
+    { id: 5, name: "Abgeschlossen", color: "#6B7280", order: 5 },
   ];
 
   return (
