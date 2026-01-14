@@ -77,8 +77,13 @@ export default function Shop() {
   };
   
   const handleDownloadHandbuch = () => {
-    // Download the PDF
-    window.open('/handbuch-immobilienprojektentwickler.pdf', '_blank');
+    // Download the PDF with custom filename
+    const link = document.createElement('a');
+    link.href = '/downloads/handbuch-finanzamtprobleme.pdf';
+    link.download = 'Handbuch-Finanzamtprobleme-NonDom.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   
   const analysisFeatures = [
