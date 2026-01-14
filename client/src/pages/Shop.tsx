@@ -83,48 +83,48 @@ export default function Shop() {
   
   const analysisFeatures = [
     {
-      icon: Building2,
-      title: "Unternehmensanalyse",
-      description: "Detaillierte Analyse Ihrer Immobiliengesellschaft und Portfoliostruktur"
+      icon: FileText,
+      title: "Finanzamt-Situation",
+      description: "Vollständige Bestandsaufnahme offener Forderungen und kritischer Fristen"
     },
     {
       icon: TrendingUp,
-      title: "Kapitalmarktfähigkeit",
-      description: "Bewertung der Kapitalmarktfähigkeit und Optimierungspotenziale"
+      title: "Eskalationsstufe",
+      description: "Bewertung der Eskalationsstufe und Dringlichkeit des Handlungsbedarfs"
     },
     {
-      icon: FileText,
-      title: "Strukturierungsempfehlung",
-      description: "Konkrete Empfehlungen für CLN, Anleihen, Fonds oder andere Instrumente"
+      icon: Building2,
+      title: "Liquiditätsanalyse",
+      description: "Detaillierte Liquiditätsplanung für die nächsten 30/60/90 Tage"
     },
     {
       icon: Users,
-      title: "Investorenprofil",
-      description: "Identifikation passender Investorengruppen und Platzierungsstrategien"
+      title: "Krisenstrategie",
+      description: "Konkrete Handlungsempfehlungen und Verhandlungsstrategien"
     },
   ];
   
   const handbuchChapters = [
-    "Warum Private Debt für Projektentwickler jetzt entscheidend ist",
-    "Was ist Private Debt? Klartext statt Buzzwords",
-    "Wer sind die Player auf dem PrivateDebt-Markt?",
-    "Welche Strukturen und Instrumente gibt es?",
-    "Was Private-Debt-Investoren konkret sehen wollen",
-    "Schritt-für-Schritt zur Private-Debt-Finanzierung",
-    "Kennzahlen, auf die es ankommt",
-    "Typische Fehler, die Sie vermeiden sollten",
-    "Blueprint: So machen Sie Ihr Unternehmen Private-Debt-ready",
+    "Wie das Finanzamt arbeitet – Die Maschinerie verstehen",
+    "Die 10 häufigsten Auslöser für Finanzamt-Probleme",
+    "72-Stunden-Notfallplan bei akuten Krisen",
+    "Stundung, Ratenzahlung, Vergleich – Ihre Optionen",
+    "Verhandlungsstrategien mit dem Finanzamt",
+    "Der 90-Tage-Stabilisierungsplan",
+    "Wann Sie einen Steuerberater brauchen – und wann nicht",
+    "Typische Fehler, die alles verschlimmern",
+    "Checkliste: Dokumente und Unterlagen für die Verhandlung",
   ];
   
   const included = [
-    "Umfassende Due-Diligence-Prüfung",
-    "Analyse der Unternehmensstruktur",
-    "Bewertung der Finanzierungsoptionen",
-    "Strukturierungsempfehlung",
-    "Umsetzungsfahrplan mit Zeitplan",
-    "Persönliches Beratungsgespräch",
-    "Schriftlicher Analysebericht (ca. 30 Seiten)",
-    "Follow-up Gespräch nach 2 Wochen",
+    "Vollständige Bestandsaufnahme Finanzamt-Situation",
+    "Analyse offener Forderungen & Fristen",
+    "Bewertung der Eskalationsstufe",
+    "Liquiditätsanalyse 30/60/90 Tage",
+    "Konkrete Krisenstrategie",
+    "Schriftlicher Analysebericht (15-20 Seiten)",
+    "Persönliches Beratungsgespräch (60 Min)",
+    "Follow-up nach 2 Wochen",
   ];
   
   // Check if user can download handbuch for free (logged in)
@@ -189,8 +189,8 @@ export default function Shop() {
                   <BookOpen className="w-6 h-6 text-amber-600" />
                 </div>
                 <div>
-                  <CardTitle className="text-xl">Handbuch für Immobilienprojektentwickler</CardTitle>
-                  <CardDescription>28 Seiten Expertenwissen</CardDescription>
+                  <CardTitle className="text-xl">Probleme mit dem Finanzamt - Die Notfallstrategie</CardTitle>
+                  <CardDescription>36 Seiten Expertenwissen</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -212,7 +212,7 @@ export default function Shop() {
               
               {/* Subtitle */}
               <p className="text-sm text-muted-foreground">
-                <strong>Private Debt</strong> – Wie Sie über den Private-Debt-Markt Refinanzierungskapital gewinnen
+                <strong>Die Notfallstrategie</strong> – Von der akuten Krise bis zur langfristigen Stabilisierung
               </p>
               
               {/* Chapters Preview */}
@@ -282,7 +282,7 @@ export default function Shop() {
               )}
               
               <p className="text-xs text-muted-foreground text-center">
-                PDF-Download • Sofort verfügbar • 28 Seiten
+                PDF-Download • Sofort verfügbar • 36 Seiten
               </p>
             </CardFooter>
           </Card>
@@ -296,8 +296,8 @@ export default function Shop() {
                     <TrendingUp className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <CardTitle className="text-xl">Analyse-Paket</CardTitle>
-                    <CardDescription>Professionelle Beratung</CardDescription>
+                    <CardTitle className="text-xl">Krisenanalyse-Paket</CardTitle>
+                    <CardDescription>Professionelle Krisenberatung</CardDescription>
                   </div>
                 </div>
                 {hasPurchasedAnalysis && (

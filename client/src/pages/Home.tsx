@@ -446,11 +446,11 @@ export default function Home() {
                 <h3 className="font-semibold text-lg">Die Analyse umfasst:</h3>
                 <ul className="space-y-3">
                   {[
-                    "Sichtung und Auswertung Ihrer Unterlagen (Jahresabschlüsse, BWA, Steuerbescheide, Verbindlichkeiten)",
-                    "Analyse der bestehenden Finanzierungsstruktur (Eigen-/Fremdkapital, Covenants, Rangfolgen)",
-                    "Bewertung der Finanzierungsfähigkeit über Banken, Private Debt, CLN oder Fonds",
-                    "Entwicklung möglicher Strukturierungsansätze (CLN, Fonds, SPV, Holding-Umbau)",
-                    "Regulatorische Einordnung und Identifikation erforderlicher Partner",
+                    "Vollständige Bestandsaufnahme Ihrer Finanzamt-Situation und offener Forderungen",
+                    "Analyse kritischer Fristen und Bewertung der Eskalationsstufe",
+                    "Detaillierte Liquiditätsplanung für die nächsten 30/60/90 Tage",
+                    "Entwicklung einer konkreten Krisenstrategie mit Handlungsempfehlungen",
+                    "Schriftlicher Analysebericht (15-20 Seiten) und persönliches Beratungsgespräch",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
@@ -515,19 +515,19 @@ export default function Home() {
                 Kostenloses Expertenwissen
               </div>
               <h2 className="text-3xl md:text-4xl font-bold">
-                Handbuch für <span className="text-amber-600">Immobilienprojektentwickler</span>
+                Probleme mit dem <span className="text-amber-600">Finanzamt</span> – Die Notfallstrategie
               </h2>
               <p className="text-lg text-muted-foreground">
-                <strong>Private Debt</strong> – Wie Sie über den Private-Debt-Markt Refinanzierungskapital gewinnen. 
-                28 Seiten Expertenwissen mit 9 Kapiteln und 5 Anhängen.
+                <strong>Die Notfallstrategie</strong> – Von der akuten Krise bis zur langfristigen Stabilisierung.
+                36 Seiten Expertenwissen mit 9 Kapiteln und praktischen Checklisten.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Warum Private Debt für Projektentwickler jetzt entscheidend ist",
-                  "Wer sind die Player auf dem Private-Debt-Markt?",
-                  "Welche Strukturen und Instrumente gibt es?",
-                  "Schritt-für-Schritt zur Private-Debt-Finanzierung",
-                  "Blueprint: So machen Sie Ihr Unternehmen Private-Debt-ready",
+                  "Wie das Finanzamt arbeitet – Die Maschinerie verstehen",
+                  "Die 10 häufigsten Auslöser für Finanzamt-Probleme",
+                  "72-Stunden-Notfallplan bei akuten Krisen",
+                  "Verhandlungsstrategien mit dem Finanzamt",
+                  "Der 90-Tage-Stabilisierungsplan",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-amber-600 mt-0.5 flex-shrink-0" />
@@ -601,7 +601,7 @@ export default function Home() {
                       </>
                     )}
                     <p className="text-xs text-center text-muted-foreground">
-                      PDF-Download • 28 Seiten • Sofort verfügbar
+                      PDF-Download • 36 Seiten • Sofort verfügbar
                     </p>
                   </div>
                 </CardContent>
