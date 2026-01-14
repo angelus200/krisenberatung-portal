@@ -540,7 +540,7 @@ export async function sendAdminOrderNotification(data: {
               <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://portal.immoportal.app/admin/orders" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+                    <a href="https://www.unternehmensoptimierung.app/admin/orders" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
                       Bestellung im Admin-Bereich ansehen
                     </a>
                   </td>
@@ -659,7 +659,7 @@ export async function sendWelcomeEmail(data: {
                 NON <span style="background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px;">DOM</span> GROUP
               </h1>
               <p style="margin: 15px 0 0 0; color: rgba(255,255,255,0.9); font-size: 16px;">
-                Ihr Partner für Immobilien-Refinanzierung
+                Ihr Partner für Unternehmens-Krisenberatung
               </p>
             </td>
           </tr>
@@ -676,7 +676,7 @@ export async function sendWelcomeEmail(data: {
               </p>
 
               <p style="margin: 0 0 30px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
-                Mit Ihrem Zugang haben Sie nun Zugriff auf alle Funktionen unseres Portals für eine professionelle Immobilien-Refinanzierung.
+                Mit Ihrem Zugang haben Sie nun Zugriff auf alle Funktionen unseres Portals für professionelle Unternehmens-Krisenberatung.
               </p>
 
               <!-- Features Box -->
@@ -725,7 +725,7 @@ export async function sendWelcomeEmail(data: {
               <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://portal.immoportal.app/dashboard" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 6px rgba(0, 180, 216, 0.3);">
+                    <a href="https://www.unternehmensoptimierung.app/dashboard" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 16px 40px; border-radius: 8px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 6px rgba(0, 180, 216, 0.3);">
                       Zum Portal
                     </a>
                   </td>
@@ -742,7 +742,7 @@ export async function sendWelcomeEmail(data: {
                     </p>
                     <p style="margin: 10px 0 0 0; color: #4b5563; font-size: 14px; line-height: 1.6;">
                       📧 <a href="mailto:info@non-dom.group" style="color: #00B4D8; text-decoration: none;">info@non-dom.group</a><br>
-                      🌐 <a href="https://portal.immoportal.app" style="color: #00B4D8; text-decoration: none;">portal.immoportal.app</a>
+                      🌐 <a href="https://www.unternehmensoptimierung.app" style="color: #00B4D8; text-decoration: none;">www.unternehmensoptimierung.app</a>
                     </p>
                   </td>
                 </tr>

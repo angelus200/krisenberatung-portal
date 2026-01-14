@@ -24,7 +24,7 @@ const anwenderKapitel: Chapter[] = [
 
 Nach der Einladung durch einen Administrator können Sie sich anmelden:
 
-1. Gehen Sie zu **portal.immoportal.app**
+1. Gehen Sie zu **www.unternehmensoptimierung.app**
 2. Geben Sie Ihre **E-Mail** und **Passwort** ein
 3. Klicken Sie auf **"Anmelden"**
 4. Bei der ersten Anmeldung werden Sie zum **Onboarding** weitergeleitet
@@ -41,12 +41,12 @@ Nach der ersten Anmeldung führen Sie das Onboarding durch:
 - Telefonnummer
 - Adresse
 
-### Immobiliendaten
-- Objektadresse
-- Immobilientyp (Einfamilienhaus, Wohnung, etc.)
-- Wohnfläche in m²
-- Grundstücksgröße
-- Baujahr
+### Unternehmensdaten
+- Firmenname
+- Rechtsform
+- Branche
+- Gründungsjahr
+- Mitarbeiterzahl
 
 ### Finanzierungsdaten
 - Kaufpreis / aktueller Marktwert
@@ -184,7 +184,7 @@ Checkliste für Ihr Beratungsgespräch:
 
 - [ ] Personalausweis bereithalten
 - [ ] Aktuelle Einkommensnachweise griffbereit
-- [ ] Immobilienunterlagen vorbereiten
+- [ ] Unternehmensunterlagen vorbereiten
 - [ ] Liste mit Fragen/Anliegen notieren
 - [ ] Bei Video-Call: Funktionierende Kamera und Mikrofon prüfen
     `
@@ -201,7 +201,7 @@ Im Bereich **Shop** finden Sie verschiedene Services, die Sie buchen können:
 ### Verfügbare Produkte
 - **Finanzierungsberatung** - Umfassende Beratung zu Ihrem Vorhaben
 - **Bonitätsprüfung Express** - Schnelle Einschätzung Ihrer Bonität
-- **Objektbewertung** - Professionelle Immobilienbewertung
+- **Unternehmensbewertung** - Professionelle Unternehmensbewertung
 - **Dokumenten-Check** - Prüfung Ihrer Unterlagen auf Vollständigkeit
 - **Vertragscheck Premium** - Juristische Prüfung bestehender Verträge
 
@@ -274,7 +274,7 @@ So laden Sie Dokumente hoch:
 | Kategorie | Beispiele | Pflicht? |
 |-----------|-----------|----------|
 | **Einkommensnachweise** | Gehaltsabrechnungen (letzte 3 Monate), Jahresabschluss, Steuerbescheid, Rentenbescheid | ✅ Ja |
-| **Immobilienunterlagen** | Grundbuchauszug, Kaufvertrag, Exposé, Flurkarte, Energieausweis, Baugenehmigung | ✅ Ja |
+| **Unternehmensunterlagen** | Grundbuchauszug, Kaufvertrag, Exposé, Flurkarte, Energieausweis, Baugenehmigung | ✅ Ja |
 | **Finanzierungsunterlagen** | Bestehende Darlehensverträge, Kontoauszüge (3 Monate), Schufa-Auskunft | ✅ Ja |
 | **Persönliche Dokumente** | Personalausweis (Vorder- & Rückseite), Meldebescheinigung, Heiratsurkunde | ✅ Ja |
 | **Sonstige** | Weitere relevante Dokumente | ❌ Optional |
@@ -853,7 +853,7 @@ Unter **Termin-Statistiken** sehen Sie:
 1. Öffnen Sie einen Kunden in der Liste
 2. Sehen Sie alle erfassten Daten:
    - **Persönliche Daten** - Name, Adresse, Kontakt
-   - **Immobiliendaten** - Objektdetails
+   - **Unternehmensdaten** - Objektdetails
    - **Finanzierungswunsch** - Darlehenssumme, Laufzeit
    - **Bestehende Finanzierungen** - Aktuelle Kredite
 3. **Validieren** Sie die Daten auf Plausibilität
@@ -1124,7 +1124,7 @@ So ändern Sie Benutzereinstellungen:
 Öffnen Sie das Terminal und führen Sie aus:
 
 \`\`\`bash
-cd ~/Downloads/immorefi-portal
+cd ~/Downloads/krisenberatung-portal
 
 DATABASE_URL="<IHRE_DATABASE_URL>" npx tsx scripts/set-admin.ts email@example.com
 \`\`\`
@@ -1400,7 +1400,7 @@ Zentrale Konfiguration des Systems:
 
 ### E-Mail-Konfiguration
 - **Absender-Name** - Wird in E-Mails angezeigt
-- **Absender-E-Mail** - no-reply@immorefi.com
+- **Absender-E-Mail** - info@non-dom.group
 - **Reply-To-E-Mail** - support@angelus.group
 - **E-Mail-Signatur** - Standard-Signatur für System-E-Mails
 
@@ -1470,12 +1470,12 @@ Das Portal ist mit folgenden Diensten verbunden:
 - **Status:** ✅ Aktiv
 - **Funktion:** Versand aller System-E-Mails
 - **API-Key:** RESEND_API_KEY
-- **Domain:** mail.immorefi.com
+- **Domain:** mail.non-dom.group
 
 ### GoHighLevel (CRM)
 - **Status:** 🔄 In Entwicklung
 - **Funktion:** CRM-Synchronisierung
-- **Webhook-URL:** https://portal.immorefi.app/api/webhooks/gohighlevel
+- **Webhook-URL:** https://www.unternehmensoptimierung.app/api/webhooks/gohighlevel
 
 ## 6.4 API-Schlüssel & Umgebungsvariablen
 
@@ -1494,7 +1494,7 @@ CLERK_SECRET_KEY=sk_live_...
 VITE_CLERK_PUBLISHABLE_KEY=pk_live_...
 STRIPE_SECRET_KEY=sk_live_...
 RESEND_API_KEY=re_...
-VITE_APP_URL=https://portal.immorefi.app
+VITE_APP_URL=https://www.unternehmensoptimierung.app
 \`\`\`
 
 > **Sicherheitshinweis:**
@@ -1577,7 +1577,7 @@ Nutzen Sie das Audit-Log für:
 ## Allgemeine Fragen
 
 ### Wie melde ich mich an?
-Gehen Sie zu **portal.immorefi.app** und geben Sie Ihre E-Mail und Passwort ein. Bei der ersten Anmeldung werden Sie durch das Onboarding geführt.
+Gehen Sie zu **www.unternehmensoptimierung.app** und geben Sie Ihre E-Mail und Passwort ein. Bei der ersten Anmeldung werden Sie durch das Onboarding geführt.
 
 ### Ich habe mein Passwort vergessen
 Klicken Sie auf "Passwort vergessen?" auf der Login-Seite. Sie erhalten eine E-Mail mit einem Link zum Zurücksetzen.
@@ -1679,7 +1679,7 @@ Ja, es gibt keine Begrenzung. Aus Sicherheitsgründen sollten Sie die Anzahl abe
 Die Integration ist in Entwicklung. Kontaktieren Sie den technischen Support für Details.
 
 ### Wo finde ich die API-Dokumentation?
-Die API-Dokumentation ist unter https://portal.immorefi.app/api/docs verfügbar (nach Login).
+Die API-Dokumentation ist unter https://www.unternehmensoptimierung.app/api/docs verfügbar (nach Login).
 
 ## Technische Fragen
 
@@ -1752,7 +1752,7 @@ export default function AdminHandbuch() {
       <div className="border-b p-4 print:hidden">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h1 className="text-2xl font-bold">ImmoRefi Portal - Benutzerhandbuch</h1>
+            <h1 className="text-2xl font-bold">Krisenberatung Portal - Benutzerhandbuch</h1>
             <p className="text-sm text-muted-foreground mt-1">
               Version 2.0 | Stand: 13. Januar 2026
             </p>
@@ -1785,7 +1785,7 @@ export default function AdminHandbuch() {
 
       {/* Print Header - Only visible when printing */}
       <div className="hidden print:block p-8 border-b">
-        <h1 className="text-3xl font-bold mb-2">ImmoRefi Portal - Benutzerhandbuch</h1>
+        <h1 className="text-3xl font-bold mb-2">Krisenberatung Portal - Benutzerhandbuch</h1>
         <p className="text-lg text-gray-600">Version 2.0 | Stand: 13. Januar 2026</p>
         <p className="text-sm text-gray-500 mt-2">
           {activeTab === "anwender" ? "Anwenderhandbuch" : "Administratorhandbuch"}

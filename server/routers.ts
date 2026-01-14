@@ -1013,7 +1013,7 @@ const userRouter = router({
       ort: z.string().optional(),
       land: z.string().optional(),
       website: z.string().optional(),
-      // Step 3: Immobilienportfolio
+      // Step 3: Unternehmensdaten
       portfolioGroesse: z.string().optional(),
       anzahlObjekte: z.string().optional(),
       objektarten: z.array(z.string()).optional(),
@@ -1933,7 +1933,7 @@ const downloadRouter = router({
         
         notifyOwner({
           title: `Neuer Handbuch-Download`,
-          content: `Das Handbuch für Immobilienprojektentwickler wurde heruntergeladen.\n\nBenutzer: ${userName}\nE-Mail: ${userEmail}\nProdukt: ${input.productName}\nZeit: ${new Date().toLocaleString('de-DE')}`,
+          content: `Das Handbuch Finanzamt-Probleme wurde heruntergeladen.\n\nBenutzer: ${userName}\nE-Mail: ${userEmail}\nProdukt: ${input.productName}\nZeit: ${new Date().toLocaleString('de-DE')}`,
         }).catch(err => console.warn('[Download] Failed to notify owner:', err));
       }
       

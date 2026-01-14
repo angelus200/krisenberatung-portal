@@ -217,7 +217,7 @@ export default function Home() {
                     <div>
                       <div className="text-sm text-muted-foreground">Marktkapitalisierung</div>
                       <div className="text-3xl font-bold">€12.5Mrd+</div>
-                      <div className="text-xs text-muted-foreground">im Immo Private Debt Markt</div>
+                      <div className="text-xs text-muted-foreground">im Krisenberatungs-Markt</div>
                     </div>
                     <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                       <TrendingUp className="h-6 w-6 text-primary" />
@@ -274,7 +274,7 @@ export default function Home() {
               Erfahren Sie mehr über <span className="text-primary">unsere Lösungen</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              In diesem Video erklären wir, wie wir Immobilienunternehmen beim Zugang zum Kapitalmarkt unterstützen.
+              In diesem Video erklären wir, wie wir Unternehmen in Krisensituationen professionell beraten und unterstützen.
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
@@ -438,8 +438,8 @@ export default function Home() {
                 Analyse & <span className="text-primary">Strukturierungsdiagnose</span>
               </h2>
               <p className="text-lg text-muted-foreground">
-                Die Refinanzierungs- und Kapitalstrukturierung von Bauträgern ist stets individuell. 
-                Art, Umfang, Modelllogik und regulatorische Einordnung können erst nach einer fundierten Analyse 
+                Die Krisensituation jedes Unternehmens ist individuell und erfordert maßgeschneiderte Lösungen.
+                Art, Umfang und konkrete Maßnahmen können erst nach einer fundierten Analyse
                 belastbar definiert werden.
               </p>
               <div className="space-y-4">
@@ -564,9 +564,9 @@ export default function Home() {
                   <div className="border-t pt-4 space-y-3">
                     {isAuthenticated ? (
                       <Button 
-                        className="w-full bg-amber-600 hover:bg-amber-700" 
+                        className="w-full bg-amber-600 hover:bg-amber-700"
                         size="lg"
-                        onClick={() => window.open('/handbuch-immobilienprojektentwickler.pdf', '_blank')}
+                        onClick={() => window.open('/downloads/handbuch-finanzamtprobleme.pdf', '_blank')}
                       >
                         <Download className="mr-2 h-4 w-4" />
                         Jetzt herunterladen
@@ -623,8 +623,8 @@ export default function Home() {
               Sind Sie bereit für eine <span className="text-primary">professionelle Refinanzierung</span>?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Finden Sie in nur 3 Minuten heraus, ob Ihre Immobilienprojekte für eine professionelle 
-              Refinanzierungsstrategie mit Investoren, Fonds oder Club Deals geeignet sind.
+              Finden Sie in nur 3 Minuten heraus, ob Ihr Unternehmen für professionelle
+              Krisenberatung und Sanierungsstrategien geeignet ist.
             </p>
           </div>
           
@@ -1091,7 +1091,7 @@ export default function Home() {
                 <span className="text-xs text-muted-foreground uppercase tracking-wider ml-1">Group</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Ihr Partner für Kapitalmarktzugang und strukturierte Immobilieninvestments.
+                Ihr Partner für professionelle Krisenberatung und Unternehmenssanierung.
               </p>
               <div className="flex gap-4 mt-4">
                 <a 

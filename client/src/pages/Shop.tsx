@@ -165,7 +165,7 @@ export default function Shop() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
-            Wissen & Beratung für Immobilienprofis
+            Wissen & Beratung für Unternehmer in der Krise
           </Badge>
           <h1 className="text-4xl font-bold tracking-tight mb-4">
             Unsere Produkte
