@@ -162,30 +162,31 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <TrendingUp className="h-4 w-4" />
-                Kapitalmarktzugang für Immobilienunternehmen
+                <Shield className="h-4 w-4" />
+                Professionelle Krisenberatung
               </div>
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                <span className="text-foreground">Ihr Zugang zum</span>{" "}
-                <span className="text-primary">Kapitalmarkt</span>
+                <span className="text-foreground">Professionelle</span>{" "}
+                <span className="text-primary">Krisenberatung</span>{" "}
+                <span className="text-foreground">für Unternehmen</span>
               </h1>
-              
+
               <p className="text-xl text-muted-foreground max-w-lg">
-                Wir strukturieren für Immobilienunternehmen Credit Linked Notes, Anleihen, 
-                Zertifikate und Fonds. Profitieren Sie von unserem Netzwerk aus Banken und Kapitalmarktexperten.
+                Probleme mit dem Finanzamt? Sanierung? Wir helfen.
+                Professionelle Beratung bei Unternehmenskrisen, Insolvenz und Restrukturierung.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="#kontakt">
+                <Link href="/shop">
                   <Button size="lg" className="w-full sm:w-auto">
-                    Analyse anfordern
+                    Jetzt Problemanalyse anfordern
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                </a>
-                <a href="#prozess">
+                </Link>
+                <a href="#kontakt">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    So funktioniert's
+                    Kostenlose Erstberatung
                   </Button>
                 </a>
               </div>
@@ -462,8 +463,8 @@ export default function Home() {
             <div>
               <Card className="border-2 border-primary shadow-xl">
                 <CardHeader className="text-center pb-2">
-                  <div className="text-sm text-muted-foreground">Analyse & Strukturierungsdiagnose</div>
-                  <div className="text-5xl font-bold text-primary">€ 2.990</div>
+                  <div className="text-sm text-muted-foreground">Problemanalyse</div>
+                  <div className="text-5xl font-bold text-primary">€ 499</div>
                   <div className="text-sm text-muted-foreground">zzgl. MwSt. | Einmaliges Fixhonorar</div>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -668,44 +669,44 @@ export default function Home() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Strukturierungs<span className="text-primary">module</span>
+              Unsere <span className="text-primary">Leistungen</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Nach der Analyse: Maßgeschneiderte Kapitalmarktlösungen für Ihr Unternehmen
+              Professionelle Unterstützung in allen Krisensituationen
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: Building2,
-                title: "Credit Linked Notes (CLN)",
-                description: "Strukturierte Schuldverschreibungen, deren Rückzahlung an definierte Kredit- oder Projektparameter gekoppelt ist.",
+                icon: FileText,
+                title: "Finanzamt-Probleme",
+                description: "Unterstützung bei Steuerschulden, Stundungsanträgen und Verhandlungen mit dem Finanzamt.",
               },
               {
                 icon: TrendingUp,
-                title: "Actively Managed Certificates",
-                description: "Strukturierte Finanzinstrumente mit aktiv gemanagtem Referenzportfolio für institutionelle Investoren.",
+                title: "Sanierungsbegleitung",
+                description: "Entwicklung und Umsetzung von Sanierungskonzepten zur Wiederherstellung der Zahlungsfähigkeit.",
               },
               {
                 icon: Shield,
-                title: "Private Placements",
-                description: "Prospektfreie Angebote ausschließlich für professionelle oder semiprofessionelle Investoren.",
+                title: "Insolvenzbegleitung",
+                description: "Beratung zu Schutzschirmverfahren, Eigenverwaltung und Insolvenzanträgen.",
               },
               {
                 icon: Users,
-                title: "Fonds & SPVs",
-                description: "Alternative Investment Funds (AIF), SICAV-Strukturen und Special Purpose Vehicles für Ihr Portfolio.",
+                title: "Gläubiger-Verhandlungen",
+                description: "Professionelle Verhandlungsführung mit Gläubigern für Stundungen, Ratenzahlungen und Vergleiche.",
               },
               {
-                icon: FileText,
-                title: "Club Deals",
-                description: "Exklusive Co-Investment-Strukturen mit ausgewählten Investorengruppen auf individueller Basis.",
+                icon: Building2,
+                title: "Restrukturierung",
+                description: "Umstrukturierung von Schulden und Geschäftsprozessen für eine nachhaltige Zukunft.",
               },
               {
                 icon: CheckCircle2,
-                title: "Holding-Umbauten",
-                description: "Gruppenumbauten und Strukturoptimierungen zur Verbesserung der Kapitalmarktfähigkeit.",
+                title: "Liquiditätsplanung",
+                description: "Erstellen von Liquiditätsplänen und Cash-Flow-Prognosen zur Vermeidung der Zahlungsunfähigkeit.",
               },
             ].map((service, index) => (
               <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary/20">
@@ -748,9 +749,9 @@ export default function Home() {
             {[
               {
                 step: "Stufe 1",
-                title: "Analyse & Strukturierungsdiagnose",
-                price: "€ 2.990",
-                description: "Eigenständige, abgeschlossene Beratungsleistung als Voraussetzung für alle weiteren Schritte. Inkl. SWOT-Analyse, Finanzierungsfähigkeit, Strukturierungsoptionen und Handlungsempfehlungen.",
+                title: "Problemanalyse",
+                price: "€ 499",
+                description: "Umfassende Analyse Ihrer Unternehmenssituation inkl. Handlungsempfehlungen. Eigenständige, abgeschlossene Beratungsleistung als Voraussetzung für alle weiteren Schritte.",
                 highlight: true,
               },
               {

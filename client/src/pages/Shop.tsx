@@ -312,12 +312,12 @@ export default function Shop() {
             <CardContent className="space-y-4">
               {/* Price */}
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold">€2.990</span>
+                <span className="text-3xl font-bold">€499</span>
                 <span className="text-muted-foreground text-sm">einmalig, zzgl. MwSt.</span>
               </div>
-              
+
               <p className="text-sm text-muted-foreground">
-                Umfassende Analyse Ihrer Immobiliengesellschaft für den Kapitalmarktzugang
+                Umfassende Analyse Ihrer Unternehmenssituation inkl. Handlungsempfehlungen
               </p>
               
               {/* Features Grid */}

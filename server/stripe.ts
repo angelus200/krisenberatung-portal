@@ -16,9 +16,9 @@ export const stripe = new Stripe(STRIPE_CONFIG.secretKey, {
 export const PRODUCTS = {
   ANALYSIS: {
     id: 'analysis',
-    name: 'Analyse & Strukturierungsdiagnose',
-    description: 'Umfassende Analyse Ihres Unternehmens für Krisenberatung und Sanierung. Inkl. Strukturierungsempfehlung, Optimierungsoptionen und Umsetzungsfahrplan.',
-    price: 299000, // €2.990,00 in cents
+    name: 'Problemanalyse',
+    description: 'Umfassende Analyse Ihrer Unternehmenssituation inkl. Handlungsempfehlungen',
+    price: 49900, // €499,00 in cents
     currency: 'eur',
   },
   HANDBUCH: {
