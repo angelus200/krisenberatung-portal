@@ -18,12 +18,12 @@ import {
 
 const DOCUMENT_CATEGORIES = [
   { value: "jahresabschluss", label: "Jahresabschlüsse (letzte 3 Jahre)" },
-  { value: "bwa", label: "BWA / Summen- und Saldenliste" },
-  { value: "objektliste", label: "Objektliste mit Eckdaten" },
-  { value: "mieterliste", label: "Aktuelle Mieterliste" },
-  { value: "finanzierungen", label: "Übersicht bestehender Finanzierungen" },
-  { value: "wertgutachten", label: "Aktuelle Wertgutachten" },
+  { value: "bwa", label: "Aktuelle BWA / Summen- und Saldenliste" },
+  { value: "steuerbescheide", label: "Steuerbescheide (letzte 3 Jahre)" },
+  { value: "verbindlichkeiten", label: "Übersicht aller Verbindlichkeiten" },
+  { value: "mahnungen", label: "Mahnungen / Vollstreckungsbescheide" },
   { value: "gesellschaftsvertrag", label: "Gesellschaftsvertrag / Satzung" },
+  { value: "kontoauszuege", label: "Bankkontoauszüge (letzte 6 Monate)" },
   { value: "sonstige", label: "Sonstige Dokumente" },
 ] as const;
 
@@ -183,11 +183,11 @@ export default function OnboardingDocumentUpload() {
   const groupedDocuments: Record<DocumentCategory, UploadedDoc[]> = {
     jahresabschluss: [],
     bwa: [],
-    objektliste: [],
-    mieterliste: [],
-    finanzierungen: [],
-    wertgutachten: [],
+    steuerbescheide: [],
+    verbindlichkeiten: [],
+    mahnungen: [],
     gesellschaftsvertrag: [],
+    kontoauszuege: [],
     sonstige: [],
   };
   
@@ -340,7 +340,7 @@ export default function OnboardingDocumentUpload() {
       {/* Required Documents Checklist */}
       <Card>
         <CardContent className="pt-6">
-          <h4 className="font-semibold mb-4">Empfohlene Dokumente für die Analyse</h4>
+          <h4 className="font-semibold mb-4">Benötigte Dokumente für die Krisenberatung</h4>
           <div className="space-y-2">
             {DOCUMENT_CATEGORIES.slice(0, 7).map((cat) => {
               const hasDoc = groupedDocuments[cat.value]?.length > 0;

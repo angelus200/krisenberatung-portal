@@ -445,7 +445,7 @@ export default function Home() {
                 <h3 className="font-semibold text-lg">Die Analyse umfasst:</h3>
                 <ul className="space-y-3">
                   {[
-                    "Sichtung und Auswertung Ihrer Unterlagen (Jahresabschlüsse, Projektkalkulationen, Finanzierungsverträge)",
+                    "Sichtung und Auswertung Ihrer Unterlagen (Jahresabschlüsse, BWA, Steuerbescheide, Verbindlichkeiten)",
                     "Analyse der bestehenden Finanzierungsstruktur (Eigen-/Fremdkapital, Covenants, Rangfolgen)",
                     "Bewertung der Finanzierungsfähigkeit über Banken, Private Debt, CLN oder Fonds",
                     "Entwicklung möglicher Strukturierungsansätze (CLN, Fonds, SPV, Holding-Umbau)",
@@ -1022,7 +1022,7 @@ export default function Home() {
               },
               {
                 question: "Welche Unterlagen benötigen Sie für eine Analyse?",
-                answer: "Für eine detaillierte Analyse benötigen wir Unterlagen wie Exposés, Mietverträge, Grundbuchauszüge, aktuelle Bewertungen und bestehende Finanzierungsunterlagen.",
+                answer: "Für eine detaillierte Analyse benötigen wir Unterlagen wie Jahresabschlüsse, BWA, Steuerbescheide, Übersicht aller Verbindlichkeiten, Mahnungen/Vollstreckungsbescheide und Bankkontoauszüge der letzten 6 Monate.",
               },
               {
                 question: "Wie funktioniert die Honorarberatung?",
