@@ -216,12 +216,8 @@ class GoHighLevelService {
 
     // Product mapping with keywords
     const productMapping: Record<string, string> = {
-      'analyse': 'produkt-analyse',
-      'gutachten': 'produkt-gutachten',
-      'portfolio': 'produkt-portfolio',
-      'beratung': 'produkt-beratung',
-      'machbarkeit': 'produkt-analyse',
-      'finanzierung': 'produkt-beratung',
+      'krisenanalyse': 'produkt-krisenanalyse',
+      'handbuch': 'produkt-handbuch-finanzamt',
     };
 
     // Check for matching keywords
@@ -275,8 +271,8 @@ class GoHighLevelService {
 
       // Collect all tags to add
       const baseTags = [
-        'bauträger',
-        'krisenberatung-kunde',
+        'krisenberatung-portal',
+        'kunde',
         'hat-bezahlt',
       ];
 
@@ -314,7 +310,7 @@ Datum: ${orderData.orderDate.toLocaleString('de-DE', {
 })}
 
 📧 Kunde: ${orderData.email}
-🔗 Portal: https://portal.immoportal.app
+🔗 Portal: Krisenberatung Portal
 
 Status: Bezahlt ✅
       `.trim();
