@@ -106,7 +106,7 @@ function generateInvoiceEmailHtml(data: {
               <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://immorefi.non-dom.group/invoices" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+                    <a href="https://krisenberatung.non-dom.group/invoices" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
                       Rechnungen ansehen
                     </a>
                   </td>
@@ -335,7 +335,7 @@ export async function sendOrderConfirmationEmail(data: {
               <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://immorefi.non-dom.group/orders" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+                    <a href="https://krisenberatung.non-dom.group/orders" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
                       Bestellungen ansehen
                     </a>
                   </td>
@@ -672,7 +672,7 @@ export async function sendWelcomeEmail(data: {
               </h2>
 
               <p style="margin: 0 0 20px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
-                Wir freuen uns sehr, Sie im <strong>ImmoRefi Portal</strong> begrüßen zu dürfen!
+                Wir freuen uns sehr, Sie im <strong>Krisenberatung Portal</strong> begrüßen zu dürfen!
               </p>
 
               <p style="margin: 0 0 30px 0; color: #4b5563; font-size: 16px; line-height: 1.6;">
@@ -785,7 +785,7 @@ export async function sendWelcomeEmail(data: {
         from: EMAIL_CONFIG.from,
         to: data.customerEmail,
         replyTo: EMAIL_CONFIG.replyTo,
-        subject: '🎉 Willkommen im ImmoRefi Portal - NON DOM Group',
+        subject: '🎉 Willkommen im Krisenberatung Portal - NON DOM Group',
         html: welcomeEmailHtml,
       });
 
@@ -1289,7 +1289,7 @@ export async function sendBookingCancelledEmail(data: {
               <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://immorefi.non-dom.group/booking" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
+                    <a href="https://krisenberatung.non-dom.group/booking" style="display: inline-block; background: linear-gradient(135deg, #00B4D8 0%, #0096B4 100%); color: #ffffff; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600;">
                       Neuen Termin buchen
                     </a>
                   </td>

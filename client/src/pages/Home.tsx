@@ -281,7 +281,7 @@ export default function Home() {
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/CQ08OZ5mn4w?rel=0"
-                title="ImmoRefi - Kapitalmarktzugang für Immobilienunternehmen"
+                title="Krisenberatung Portal - Unternehmensoptimierung"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />

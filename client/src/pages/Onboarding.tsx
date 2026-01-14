@@ -118,7 +118,7 @@ export default function Onboarding() {
             <span className="font-bold text-2xl text-primary">NON</span>
             <span className="font-bold text-2xl text-primary bg-primary/10 px-2 rounded">DOM</span>
           </div>
-          <h1 className="text-2xl font-bold">Willkommen bei ImmoRefi</h1>
+          <h1 className="text-2xl font-bold">Willkommen beim Krisenberatung Portal</h1>
           <p className="text-muted-foreground mt-2">
             Vervollständigen Sie Ihr Profil, um loszulegen
           </p>

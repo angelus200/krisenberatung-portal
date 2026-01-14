@@ -1,6 +1,6 @@
 # GoHighLevel CRM Integration
 
-Diese Integration verbindet das ImmoRefi Portal automatisch mit GoHighLevel CRM.
+Diese Integration verbindet das Krisenberatung Portal automatisch mit GoHighLevel CRM.
 
 ## Features
 

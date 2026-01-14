@@ -12,18 +12,18 @@ export const stripe = new Stripe(STRIPE_CONFIG.secretKey, {
   apiVersion: '2025-12-15.clover',
 });
 
-// Product definitions for ImmoRefi
+// Product definitions for Krisenberatung Portal
 export const PRODUCTS = {
   ANALYSIS: {
     id: 'analysis',
     name: 'Analyse & Strukturierungsdiagnose',
-    description: 'Umfassende Analyse Ihrer Immobiliengesellschaft für den Kapitalmarktzugang. Inkl. Strukturierungsempfehlung, Finanzierungsoptionen und Umsetzungsfahrplan.',
+    description: 'Umfassende Analyse Ihres Unternehmens für Krisenberatung und Sanierung. Inkl. Strukturierungsempfehlung, Optimierungsoptionen und Umsetzungsfahrplan.',
     price: 299000, // €2.990,00 in cents
     currency: 'eur',
   },
   HANDBUCH: {
     id: 'handbuch',
-    name: 'Handbuch für Immobilienprojektentwickler',
+    name: 'Handbuch für Unternehmensoptimierung',
     description: 'Private Debt – Wie Sie über den Private-Debt-Markt Refinanzierungskapital gewinnen. 28 Seiten Expertenwissen mit 9 Kapiteln und 5 Anhängen.',
     price: 2990, // €29,90 in cents
     currency: 'eur',

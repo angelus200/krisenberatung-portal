@@ -276,7 +276,7 @@ class GoHighLevelService {
       // Collect all tags to add
       const baseTags = [
         'bauträger',
-        'immorefi-kunde',
+        'krisenberatung-kunde',
         'hat-bezahlt',
       ];
 
@@ -388,7 +388,7 @@ ${data.company ? `🏢 Firma: ${data.company}` : ''}
 ${data.phone ? `📞 Telefon: ${data.phone}` : ''}
 ${data.kapitalbedarf ? `💰 Kapitalbedarf: ${data.kapitalbedarf}` : ''}
 
-Automatisch erfasst über ImmoRefi Portal.
+Automatisch erfasst über Krisenberatung Portal.
       `.trim();
 
       await this.addContactNote(contact.id, noteBody);

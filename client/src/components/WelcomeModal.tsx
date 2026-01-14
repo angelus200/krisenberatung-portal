@@ -52,7 +52,7 @@ export function WelcomeModal() {
               <Sparkles className="h-6 w-6 text-primary" />
             </div>
             <DialogTitle className="text-2xl">
-              Willkommen im ImmoRefi Portal!
+              Willkommen im Krisenberatung Portal!
             </DialogTitle>
           </div>
           <DialogDescription className="text-base">
@@ -87,7 +87,7 @@ export function WelcomeModal() {
               <div>
                 <h4 className="font-semibold mb-1">Analysen bestellen</h4>
                 <p className="text-sm text-muted-foreground">
-                  Fordern Sie professionelle Immobilienanalysen und Gutachten an.
+                  Fordern Sie professionelle Unternehmensanalysen und Gutachten an.
                 </p>
               </div>
             </div>
