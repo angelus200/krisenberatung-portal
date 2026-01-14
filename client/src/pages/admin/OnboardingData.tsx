@@ -198,8 +198,8 @@ export default function AdminOnboardingData() {
   const formatObjektarten = (arten: string[] | null) => {
     if (!arten || arten.length === 0) return "-";
     const labels: Record<string, string> = {
-      wohnen: "Wohnimmobilien",
-      buero: "Büroimmobilien",
+      wohnen: "Dienstleistung",
+      buero: "Handel",
       einzelhandel: "Einzelhandel",
       logistik: "Logistik/Industrie",
       hotel: "Hotel",
@@ -336,8 +336,8 @@ export default function AdminOnboardingData() {
                 <DetailRow label="Website" value={selectedEntry.website} />
               </DetailSection>
 
-              {/* Immobilienportfolio */}
-              <DetailSection title="Immobilienportfolio" icon={Building2}>
+              {/* Unternehmenssituation */}
+              <DetailSection title="Unternehmenssituation" icon={Building2}>
                 <DetailRow label="Portfoliogröße" value={selectedEntry.portfolioGroesse} />
                 <DetailRow label="Anzahl Objekte" value={selectedEntry.anzahlObjekte} />
                 <DetailRow label="Objektarten" value={formatObjektarten(selectedEntry.objektarten)} />

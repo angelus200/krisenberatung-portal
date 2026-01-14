@@ -249,7 +249,7 @@ export default function About() {
               },
               {
                 title: "Alternative Investments",
-                items: ["Anleihen & Immobilien", "Startups via SAFE Agreements", "Franchise-Modelle"]
+                items: ["Krisenberatung & Sanierung", "Startups via SAFE Agreements", "Franchise-Modelle"]
               },
               {
                 title: "M&A & Sanierung",
@@ -314,13 +314,13 @@ export default function About() {
               "Selbstständige & Freiberufler",
               "Handwerk & Baugewerbe",
               "E-Commerce & Online-Business",
-              "Immobilieninvestoren & Makler",
+              "Unternehmer in Liquiditätskrisen",
               "Startups & Innovatoren",
               "Finanz- & Unternehmensberater",
               "Transport & Logistik",
               "Gastronomie & Hotellerie",
               "Land- & Forstwirtschaft",
-              "Projektentwickler"
+              "Geschäftsführer"
             ].map((group, index) => (
               <div 
                 key={index}

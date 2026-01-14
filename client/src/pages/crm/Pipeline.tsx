@@ -349,7 +349,7 @@ function PipelineContent() {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="z.B. Immobilienfinanzierung Projekt XY"
+                placeholder="z.B. Krisenberatung Unternehmen XY"
               />
             </div>
             <div>

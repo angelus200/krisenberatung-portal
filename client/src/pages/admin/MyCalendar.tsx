@@ -116,7 +116,7 @@ function MyCalendarContent() {
                 id="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="z.B. 30 Minuten Erstgespräch zur Immobilien-Refinanzierung"
+                placeholder="z.B. 30 Minuten Erstgespräch zur Krisenberatung"
                 rows={3}
               />
               <p className="text-sm text-muted-foreground">

@@ -155,7 +155,7 @@ function KapitallueckenRechner() {
                 <div>
                   <p className="text-sm font-medium text-amber-800 dark:text-amber-200">Strukturelle Lücke erkannt</p>
                   <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">
-                    Diese Lücke kann durch Private Debt, CLN oder alternative Finanzierungsstrukturen geschlossen werden.
+                    Diese Lücke erfordert professionelle Krisenberatung und strukturierte Sanierungskonzepte.
                   </p>
                 </div>
               </div>
@@ -329,7 +329,7 @@ function BankenAbhaengigkeitsScore() {
                     {score >= 60 ? 'Kritische Abhängigkeit' : 'Erhöhte Abhängigkeit'}
                   </p>
                   <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">
-                    Eine Diversifizierung der Finanzierungsquellen durch Private Debt oder Kapitalmarktinstrumente kann das Risiko reduzieren.
+                    Eine strukturierte Sanierung und professionelle Krisenberatung kann das Risiko reduzieren.
                   </p>
                 </div>
               </div>

@@ -38,7 +38,7 @@ export default function Onboarding() {
     employees: "",
     website: "",
     // Project
-    kapitalbedarf: "",
+    beratungsbedarf: "",
     zeithorizont: "",
     verwendungszweck: "",
     projektbeschreibung: "",
@@ -257,7 +257,7 @@ export default function Onboarding() {
                         <SelectValue placeholder="Auswählen..." />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="immobilien">Immobilien</SelectItem>
+                        <SelectItem value="gastgewerbe">Gastgewerbe</SelectItem>
                         <SelectItem value="handel">Handel</SelectItem>
                         <SelectItem value="dienstleistung">Dienstleistung</SelectItem>
                         <SelectItem value="produktion">Produktion</SelectItem>
@@ -305,10 +305,10 @@ export default function Onboarding() {
               <>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="kapitalbedarf">Kapitalbedarf *</Label>
+                    <Label htmlFor="beratungsbedarf">Beratungsbedarf *</Label>
                     <Select 
-                      value={formData.kapitalbedarf} 
-                      onValueChange={(v) => updateFormData("kapitalbedarf", v)}
+                      value={formData.beratungsbedarf} 
+                      onValueChange={(v) => updateFormData("beratungsbedarf", v)}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Auswählen..." />

@@ -18,7 +18,7 @@ import {
 import { CalculatorNav } from "@/components/CalculatorNav";
 
 export default function ROECalculator() {
-  // Immobiliendaten
+  // Unternehmensdaten
   const [propertyValue, setPropertyValue] = useState(1000000);
   const [rentalIncome, setRentalIncome] = useState(48000); // Jahresmieteinnahmen
   const [operatingCosts, setOperatingCosts] = useState(12000); // Bewirtschaftungskosten p.a.
@@ -159,12 +159,12 @@ export default function ROECalculator() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Linke Spalte: Eingaben */}
           <div className="space-y-6">
-            {/* Immobiliendaten */}
+            {/* Unternehmensdaten */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Building2 className="h-5 w-5" />
-                  Immobiliendaten
+                  Unternehmensdaten
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
