@@ -768,9 +768,9 @@ export default function Home() {
               },
               {
                 step: "Stufe 3",
-                title: "Umsetzung & Kapitalakquise",
+                title: "Umsetzung & Begleitung",
                 price: "Erfolgsabhängig",
-                description: "Erfolgsabhängige Vergütung ausschließlich auf tatsächlich eingeworbenes Kapital. Platzierung durch lizenzierte Partner.",
+                description: "Aktive Begleitung bei der Umsetzung aller Maßnahmen. Verhandlungsführung mit Finanzamt, Gläubigern und Banken. Erfolgsabhängige Vergütung bei Sanierungserfolg.",
                 highlight: false,
               },
             ].map((item, index) => (
