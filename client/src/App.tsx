@@ -47,12 +47,14 @@ import ROECalculator from "./pages/tools/ROECalculator";
 import Glossary from "./pages/tools/Glossary";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Krisentest from "./pages/Krisentest";
 
 function Router() {
   return (
     <Switch>
       {/* Public Routes */}
       <Route path="/" component={Home} />
+      <Route path="/krisentest" component={Krisentest} />
       <Route path="/sign-in" component={SignIn} />
       <Route path="/sign-in/factor-one" component={SignIn} />
       <Route path="/sign-in/factor-two" component={SignIn} />

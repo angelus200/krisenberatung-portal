@@ -606,18 +606,45 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-card rounded-2xl shadow-xl border overflow-hidden">
-              <iframe 
-                src="https://link.non-dom.group/widget/quiz/6zCsuLxQjK3cqE7TQr4L"
-                style={{ width: '100%', height: '700px', border: 'none' }}
-                title="Refinanzierungs-Selbsttest"
-                allow="clipboard-write"
-              />
-            </div>
-            <p className="text-center text-sm text-muted-foreground mt-4">
-              Am Ende erhalten Sie eine klare Auswertung und erfahren, welche nächsten Schritte für Sie sinnvoll sind.
-            </p>
+          <div className="max-w-2xl mx-auto">
+            <Card className="shadow-xl border-2 border-primary/20">
+              <CardContent className="p-8 text-center space-y-6">
+                <div className="flex justify-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <CheckCircle2 className="h-8 w-8 text-primary" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Starten Sie jetzt den Krisentest</h3>
+                  <p className="text-muted-foreground">
+                    5 Fragen • 3 Minuten • Sofortige Auswertung
+                  </p>
+                </div>
+                <ul className="text-left space-y-2 max-w-md mx-auto">
+                  {[
+                    "Bewertung Ihrer Liquiditätssituation",
+                    "Analyse von Verbindlichkeiten",
+                    "Prüfung der Zahlungsfähigkeit",
+                    "Strukturbewertung Ihres Unternehmens",
+                    "Individuelle Handlungsempfehlung",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/krisentest">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Jetzt Krisentest starten
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <p className="text-xs text-muted-foreground">
+                  Vertraulich • Unverbindlich • Kostenlos
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
