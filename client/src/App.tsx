@@ -48,6 +48,7 @@ import Glossary from "./pages/tools/Glossary";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Krisentest from "./pages/Krisentest";
+import AGB from "./pages/AGB";
 
 function Router() {
   return (
@@ -69,6 +70,7 @@ function Router() {
       <Route path="/shop/success" component={ShopSuccess} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
+      <Route path="/agb" component={AGB} />
       <Route path="/about" component={About} />
       <Route path="/team" component={Team} />
       <Route path="/press" component={Press} />

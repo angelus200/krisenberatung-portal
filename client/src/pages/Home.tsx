@@ -1155,6 +1155,9 @@ export default function Home() {
                 <Link href="/datenschutz" className="hover:text-primary transition-colors">
                   Datenschutz
                 </Link>
+                <Link href="/agb" className="hover:text-primary transition-colors">
+                  AGB
+                </Link>
               </div>
             </div>
           </div>

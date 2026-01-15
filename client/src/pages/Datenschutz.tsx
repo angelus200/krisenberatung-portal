@@ -269,6 +269,9 @@ export default function Datenschutz() {
               <Link href="/datenschutz" className="text-sm text-muted-foreground hover:text-primary">
                 Datenschutz
               </Link>
+              <Link href="/agb" className="text-sm text-muted-foreground hover:text-primary">
+                AGB
+              </Link>
             </div>
           </div>
         </div>
