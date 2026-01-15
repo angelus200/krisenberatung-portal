@@ -242,11 +242,6 @@ export default function Press() {
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </a>
-                  <a href="tel:08007080044">
-                    <Button variant="outline" size="lg">
-                      0800 70 800 44
-                    </Button>
-                  </a>
                 </div>
               </CardContent>
             </Card>

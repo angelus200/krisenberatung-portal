@@ -220,10 +220,6 @@ export default function Krisentest() {
                       Problemanalyse buchen (€ 499)
                     </Button>
                   </Link>
-                  <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                    <Phone className="h-4 w-4" />
-                    <span>Oder rufen Sie uns an: 0800 70 800 44</span>
-                  </div>
                 </div>
 
                 <div className="pt-4 border-t">
@@ -281,10 +277,6 @@ export default function Krisentest() {
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Button>
                     </Link>
-                    <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                      <Phone className="h-4 w-4" />
-                      <span>0800 70 800 44</span>
-                    </div>
                   </div>
                 </div>
               </CardContent>

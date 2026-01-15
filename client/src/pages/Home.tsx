@@ -821,16 +821,6 @@ export default function Home() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">Telefon</div>
-                    <div className="text-muted-foreground">0800 70 800 44</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
