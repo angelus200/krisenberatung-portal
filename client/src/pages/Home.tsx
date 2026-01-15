@@ -1023,24 +1023,24 @@ export default function Home() {
           <Accordion type="single" collapsible className="space-y-4">
             {[
               {
-                question: "Was kostet die Portfolio-Analyse?",
-                answer: "Die Kosten für unsere Portfolio-Analyse richten sich nach Umfang und Komplexität Ihres Portfolios. Nach einem ersten Gespräch erstellen wir Ihnen ein individuelles Angebot.",
+                question: "Was kostet die Erstberatung?",
+                answer: "Die telefonische Erstberatung ist kostenlos und unverbindlich. Hier besprechen wir Ihre Situation und klären, ob und wie wir Ihnen helfen können.",
               },
               {
-                question: "Welche Unterlagen benötigen Sie für eine Analyse?",
-                answer: "Für eine detaillierte Analyse benötigen wir Unterlagen wie Jahresabschlüsse, BWA, Steuerbescheide, Übersicht aller Verbindlichkeiten, Mahnungen/Vollstreckungsbescheide und Bankkontoauszüge der letzten 6 Monate.",
+                question: "Welche Unterlagen benötige ich für eine Analyse?",
+                answer: "Für eine erste Einschätzung benötigen wir: aktuelle BWA, Summen- und Saldenliste, Übersicht offener Verbindlichkeiten (Finanzamt, Sozialversicherung, Lieferanten) sowie ggf. bereits erhaltene Mahnungen oder Bescheide.",
               },
               {
-                question: "Wie funktioniert die Honorarberatung?",
-                answer: "Alle unsere Leistungen werden auf Honorarbasis abgerechnet. So stellen wir sicher, dass wir unabhängig und ausschließlich in Ihrem Interesse handeln.",
+                question: "Wie schnell können Sie helfen?",
+                answer: "In akuten Krisensituationen reagieren wir innerhalb von 48 Stunden. Bei drohender Insolvenz oder Vollstreckung handeln wir sofort und können oft noch am selben Tag erste Maßnahmen einleiten.",
               },
               {
-                question: "Welche Kapitalmarktprodukte bieten Sie an?",
-                answer: "Wir strukturieren Credit Linked Notes (CLN), Anleihen, Zertifikate, Fonds (z.B. SICAV), SPVs und Club Deals – je nach Ihren individuellen Anforderungen.",
+                question: "Was sind typische Warnsignale für eine Unternehmenskrise?",
+                answer: "Typische Warnsignale sind: anhaltende Liquiditätsengpässe, Rückstände bei Finanzamt oder Sozialversicherung, häufige Mahnungen, Zahlungsverzug bei Lieferanten, sowie sinkende Umsätze bei gleichbleibenden Fixkosten.",
               },
               {
-                question: "Ab welchem Volumen arbeiten Sie?",
-                answer: "Wir arbeiten mit Portfolios ab einem Volumen von 5 Mio. €. Nach oben gibt es keine Grenze – wir haben bereits Projekte mit über 100 Mio. € erfolgreich strukturiert.",
+                question: "Arbeiten Sie vertraulich?",
+                answer: "Absolute Vertraulichkeit ist für uns selbstverständlich. Alle Informationen werden streng vertraulich behandelt. Wir arbeiten auf Honorarbasis, wodurch wir unabhängig und ausschließlich in Ihrem Interesse handeln.",
               },
             ].map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="bg-background rounded-lg border px-6">
