@@ -196,7 +196,7 @@ export default function Home() {
               <div className="flex items-center gap-8 pt-4">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">500+</div>
-                  <div className="text-sm text-muted-foreground">Projekte</div>
+                  <div className="text-sm text-muted-foreground">Mandate</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">€2Mrd+</div>
@@ -763,7 +763,7 @@ export default function Home() {
                 step: "Stufe 2",
                 title: "Strukturierung",
                 price: "Pauschale je Modul",
-                description: "CLN-Strukturen, Fonds- oder SPV-Setups, Holding-Umbauten, Anleihen oder AMC – separate Pauschalen je nach gewähltem Strukturierungsansatz.",
+                description: "Sanierungskonzepte, Verhandlungen mit Gläubigern, Finanzamt-Vereinbarungen, Liquiditätssicherung – separate Pauschalen je nach Umfang der Maßnahmen.",
                 highlight: false,
               },
               {
@@ -1127,10 +1127,10 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-4">Leistungen</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Credit Linked Notes</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Portfolio-Analyse</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Fonds & SPVs</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Club Deals</a></li>
+                <li><a href="#leistungen" className="hover:text-primary transition-colors">Finanzamt-Probleme</a></li>
+                <li><a href="#leistungen" className="hover:text-primary transition-colors">Krisenanalyse</a></li>
+                <li><a href="#leistungen" className="hover:text-primary transition-colors">Sanierungsberatung</a></li>
+                <li><a href="#leistungen" className="hover:text-primary transition-colors">Insolvenzbegleitung</a></li>
               </ul>
             </div>
             
