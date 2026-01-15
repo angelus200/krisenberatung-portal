@@ -216,8 +216,8 @@ export default function Home() {
                 <div className="space-y-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm text-muted-foreground">Marktkapitalisierung</div>
-                      <div className="text-3xl font-bold">€12.5Mrd+</div>
+                      <div className="text-sm text-muted-foreground">Beratene Unternehmen</div>
+                      <div className="text-3xl font-bold">500+</div>
                       <div className="text-xs text-muted-foreground">im Krisenberatungs-Markt</div>
                     </div>
                     <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -248,16 +248,16 @@ export default function Home() {
                   </div>
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center p-3 bg-muted rounded-lg">
-                      <div className="text-lg font-semibold">8</div>
-                      <div className="text-xs text-muted-foreground">Objekte</div>
+                      <div className="text-lg font-semibold">87%</div>
+                      <div className="text-xs text-muted-foreground">Erfolgsquote</div>
                     </div>
                     <div className="text-center p-3 bg-muted rounded-lg">
-                      <div className="text-lg font-semibold">5.2%</div>
-                      <div className="text-xs text-muted-foreground">Rendite</div>
+                      <div className="text-lg font-semibold">48h</div>
+                      <div className="text-xs text-muted-foreground">Reaktionszeit</div>
                     </div>
                     <div className="text-center p-3 bg-muted rounded-lg">
-                      <div className="text-lg font-semibold">A+</div>
-                      <div className="text-xs text-muted-foreground">Rating</div>
+                      <div className="text-lg font-semibold">15+</div>
+                      <div className="text-xs text-muted-foreground">Jahre Erfahrung</div>
                     </div>
                   </div>
                 </div>
@@ -599,11 +599,10 @@ export default function Home() {
               3-Minuten Selbsttest
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Sind Sie bereit für eine <span className="text-primary">professionelle Refinanzierung</span>?
+              Wie krisenfest ist Ihr <span className="text-primary">Unternehmen</span>?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Finden Sie in nur 3 Minuten heraus, ob Ihr Unternehmen für professionelle
-              Krisenberatung und Sanierungsstrategien geeignet ist.
+              Prüfen Sie in nur 3 Minuten Ihre operative Firmenstruktur auf typische Insolvenzmerkmale und erkennen Sie Handlungsbedarf frühzeitig.
             </p>
           </div>
           
