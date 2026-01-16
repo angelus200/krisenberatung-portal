@@ -355,30 +355,35 @@ async function startServer() {
   app.post('/api/upload', async (req, res) => {
     try {
       const { fileName, mimeType, data } = req.body;
-      
+
       if (!fileName || !data) {
         return res.status(400).json({ error: 'fileName and data are required' });
       }
-      
+
       const { storagePut } = await import('../storage');
       const { nanoid } = await import('nanoid');
-      
+
       // Generate unique file key
       const fileKey = `onboarding-docs/${nanoid()}-${fileName}`;
-      
+
       // Convert base64 to buffer
       const buffer = Buffer.from(data, 'base64');
-      
+
       // Upload to S3
       const result = await storagePut(fileKey, buffer, mimeType || 'application/octet-stream');
-      
+
       res.json({ key: result.key, url: result.url });
     } catch (error) {
       console.error('[Upload] Error:', error);
       res.status(500).json({ error: 'Upload failed' });
     }
   });
-  
+
+  // Static file serving for local uploads
+  const uploadsPath = require('path').join(process.cwd(), 'uploads');
+  app.use('/uploads', express.static(uploadsPath));
+  console.log('[Storage] Local file serving enabled at /uploads');
+
   // OAuth callback - REMOVED: Using Clerk authentication instead
   // registerOAuthRoutes(app);
 

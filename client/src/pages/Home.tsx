@@ -28,7 +28,6 @@ import {
   Facebook
 } from "lucide-react";
 import { Link } from "wouter";
-import { FinanceCalculator } from "@/components/FinanceCalculator";
 import { VideoCarousel } from "@/components/VideoCarousel";
 import { Calculator } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, ResponsiveContainer } from 'recharts';
@@ -646,26 +645,6 @@ export default function Home() {
               </CardContent>
             </Card>
           </div>
-        </div>
-      </section>
-
-      {/* Finanzrechner Section */}
-      <section id="rechner" className="py-16 lg:py-24 bg-slate-50 dark:bg-slate-950/50">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-8">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
-              <Calculator className="h-4 w-4" />
-              Interaktive Rechner
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Analysieren Sie Ihre <span className="text-primary">Finanzierungsstruktur</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Nutzen Sie unsere Rechner, um Kapitallücken, Risiken und Optimierungspotenziale zu identifizieren.
-            </p>
-          </div>
-          
-          <FinanceCalculator />
         </div>
       </section>
 

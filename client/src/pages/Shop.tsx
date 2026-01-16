@@ -171,7 +171,7 @@ export default function Shop() {
             Unsere Produkte
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Expertenwissen und professionelle Beratung für Ihren Kapitalmarktzugang
+            Expertenwissen und professionelle Beratung für Ihre Krisensituation
           </p>
         </div>
         
