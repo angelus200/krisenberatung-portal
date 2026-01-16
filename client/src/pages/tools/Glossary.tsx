@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Info
 } from "lucide-react";
+import DashboardLayout from '@/components/DashboardLayout';
 
 interface GlossaryTerm {
   term: string;
@@ -201,18 +202,10 @@ export default function Glossary() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <DashboardLayout>
       {/* Header */}
       <div className="border-b">
         <div className="container py-8">
-          <div className="flex items-center gap-4 mb-4">
-            <Link href="/">
-              <Button variant="ghost" size="sm">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Zurück
-              </Button>
-            </Link>
-          </div>
           <div className="flex items-center gap-4">
             <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
               <BookOpen className="h-6 w-6 text-primary" />
@@ -403,6 +396,6 @@ export default function Glossary() {
           </CardContent>
         </Card>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }
