@@ -52,7 +52,7 @@ export default function Home() {
     email: "",
     phone: "",
     company: "",
-    kapitalbedarf: "",
+    problemvolumen: "",
     zeithorizont: "",
     beschreibung: "",
   });
@@ -65,7 +65,7 @@ export default function Home() {
         email: "",
         phone: "",
         company: "",
-        kapitalbedarf: "",
+        problemvolumen: "",
         zeithorizont: "",
         beschreibung: "",
       });
@@ -199,8 +199,8 @@ export default function Home() {
                   <div className="text-sm text-muted-foreground">Mandate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">€2Mrd+</div>
-                  <div className="text-sm text-muted-foreground">Volumen</div>
+                  <div className="text-3xl font-bold text-primary">15+</div>
+                  <div className="text-sm text-muted-foreground">Jahre Erfahrung</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold text-primary">98%</div>
@@ -921,20 +921,20 @@ export default function Home() {
                   
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="kapitalbedarf">Kapitalbedarf</Label>
+                      <Label htmlFor="problemvolumen">Höhe der Verbindlichkeiten</Label>
                       <Select
-                        value={formData.kapitalbedarf}
-                        onValueChange={(value) => setFormData({ ...formData, kapitalbedarf: value })}
+                        value={formData.problemvolumen}
+                        onValueChange={(value) => setFormData({ ...formData, problemvolumen: value })}
                       >
                         <SelectTrigger>
                           <SelectValue placeholder="Bitte wählen" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="unter-500k">Unter 500.000 €</SelectItem>
-                          <SelectItem value="500k-1m">500.000 € - 1 Mio. €</SelectItem>
-                          <SelectItem value="1m-5m">1 Mio. € - 5 Mio. €</SelectItem>
-                          <SelectItem value="5m-10m">5 Mio. € - 10 Mio. €</SelectItem>
-                          <SelectItem value="ueber-10m">Über 10 Mio. €</SelectItem>
+                          <SelectItem value="unter-50k">Unter 50.000 €</SelectItem>
+                          <SelectItem value="50k-100k">50.000 € - 100.000 €</SelectItem>
+                          <SelectItem value="100k-250k">100.000 € - 250.000 €</SelectItem>
+                          <SelectItem value="250k-500k">250.000 € - 500.000 €</SelectItem>
+                          <SelectItem value="ueber-500k">Über 500.000 €</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
