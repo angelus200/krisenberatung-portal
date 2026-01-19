@@ -5,6 +5,7 @@ import * as db from "../db";
 import { ENV } from "./env";
 import { parse as parseCookieHeader } from "cookie";
 import { sendWelcomeEmail } from "../emailService";
+import { getGHLService } from "../gohighlevelService";
 
 export type TrpcContext = {
   req: CreateExpressContextOptions["req"];
@@ -110,6 +111,43 @@ export async function createContext(
           console.error("[Auth] Failed to send welcome email:", error);
           // E-Mail-Fehler soll User-Erstellung nicht blockieren
         });
+      }
+
+      // Automatischer GHL-Sync für neue Benutzer
+      if (user && userData.email) {
+        console.log("[Auth] Syncing new user to GoHighLevel:", userData.email);
+        (async () => {
+          try {
+            const ghl = getGHLService();
+
+            // Namen aufteilen für GHL
+            const nameParts = (userData.name || '').trim().split(' ');
+            const firstName = nameParts[0] || '';
+            const lastName = nameParts.slice(1).join(' ') || '';
+
+            // Contact in GHL erstellen
+            const ghlContact = await ghl.createContact({
+              email: userData.email!,
+              firstName,
+              lastName,
+              name: userData.name || undefined,
+              phone: userData.phone || undefined,
+              tags: ['Portal-Registrierung', 'Neukunde'],
+            });
+
+            if (ghlContact && ghlContact.id) {
+              // ghlContactId im User speichern
+              await db.updateUser(user!.id, {
+                ghlContactId: ghlContact.id,
+                source: 'portal',
+              });
+              console.log("[Auth] ✓ User synced to GHL, contactId:", ghlContact.id);
+            }
+          } catch (error: any) {
+            console.error("[Auth] Failed to sync user to GHL:", error.message);
+            // GHL-Fehler soll User-Erstellung nicht blockieren
+          }
+        })();
       }
     } else {
       console.log("[Auth] ✓ User found in DB:", user.id, user.email);
