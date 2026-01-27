@@ -105,6 +105,15 @@ vi.mock("./emailService", () => ({
   sendInvoiceEmail: vi.fn(() => Promise.resolve()),
 }));
 
+// Mock invoice service
+vi.mock("./invoiceService", () => ({
+  getInvoicesByUserId: vi.fn(() => Promise.resolve([])),
+  getAllInvoices: vi.fn(() => Promise.resolve([])),
+  getInvoiceWithItems: vi.fn(() => Promise.resolve(null)),
+  generateInvoiceHtml: vi.fn(() => Promise.resolve("<html></html>")),
+  createInstallmentInvoice: vi.fn(() => Promise.resolve({ id: 1, invoiceNumber: "INV-2026-001" })),
+}));
+
 // Mock GoHighLevel service
 vi.mock("./gohighlevelService", () => ({
   getGHLService: vi.fn(() => ({
