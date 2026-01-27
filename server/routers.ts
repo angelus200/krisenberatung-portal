@@ -5,6 +5,7 @@ import * as db from "./db";
 import { storagePut, storageGet } from "./storage";
 import { nanoid } from "nanoid";
 import { notifyOwner } from "./_core/notification";
+import { COOKIE_NAME } from "@shared/const";
 
 // ============================================
 // TENANT ROUTER
@@ -2862,7 +2863,7 @@ export const appRouter = router({
     logout: publicProcedure.mutation(({ ctx }) => {
       // Clear Clerk session cookie
       // Note: Clerk logout is primarily handled in the frontend via signOut()
-      ctx.res.clearCookie('__session', {
+      ctx.res.clearCookie(COOKIE_NAME, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',

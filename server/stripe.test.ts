@@ -1,4 +1,18 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+
+// Mock Stripe before importing
+vi.mock('stripe', () => {
+  return {
+    default: vi.fn(() => ({
+      checkout: {
+        sessions: {
+          create: vi.fn(),
+        },
+      },
+    })),
+  };
+});
+
 import { PRODUCTS, STRIPE_CONFIG } from './stripe';
 
 describe('Stripe Configuration', () => {

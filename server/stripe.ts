@@ -16,15 +16,15 @@ export const stripe = new Stripe(STRIPE_CONFIG.secretKey, {
 export const PRODUCTS = {
   ANALYSIS: {
     id: 'analysis',
-    name: 'Krisenanalyse-Paket',
-    description: 'Vollständige Bestandsaufnahme Ihrer Finanzamt-Situation inkl. konkreter Krisenstrategie, schriftlichem Analysebericht (15-20 Seiten), persönlichem Beratungsgespräch (60 Min) und Follow-up nach 2 Wochen.',
-    price: 49900, // €499,00 in cents
+    name: 'Analyse & Strukturierungsdiagnose',
+    description: 'Vollständige Bestandsaufnahme Ihrer Unternehmenssituation inkl. konkreter Krisenstrategie, Kapitalmarktzugang-Analyse, schriftlichem Analysebericht (15-20 Seiten), persönlichem Beratungsgespräch (60 Min) und Follow-up nach 2 Wochen.',
+    price: 299000, // €2.990,00 in cents
     currency: 'eur',
   },
   HANDBUCH: {
     id: 'handbuch',
-    name: 'Probleme mit dem Finanzamt - Die Notfallstrategie',
-    description: '36 Seiten Expertenwissen: Wie das Finanzamt arbeitet, 10 häufigste Auslöser, 72-Stunden-Notfallplan, Verhandlungsstrategien und 90-Tage-Stabilisierungsplan.',
+    name: 'Handbuch Immobilienprojektentwickler',
+    description: 'Expertenwissen für Immobilienprojektentwickler: Kapitalmarktzugang, Finanzierungsstrategien, CLN-Strukturen, Anleihen und Zertifikate.',
     price: 2990, // €29,90 in cents
     currency: 'eur',
   },
